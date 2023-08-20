@@ -1,0 +1,842 @@
+remote_employee_3:
+  hostname: remote-employee-3
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: kwhite
+  openvpn_user: kwhite
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.99.38
+  default_ipv6_address: fe80::f816:3eff:fe7c:ca47
+  ipv4_addresses:
+    - 192.168.99.38
+  ipv6_addresses:
+    - fe80::f816:3eff:fe7c:ca47
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_0:
+  hostname: remote-employee-0
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: hwhite
+  openvpn_user: hwhite
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.98.90
+  default_ipv6_address: fe80::f816:3eff:fee2:2fcb
+  ipv4_addresses:
+    - 192.168.98.90
+  ipv6_addresses:
+    - fe80::f816:3eff:fee2:2fcb
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_2:
+  hostname: remote-employee-2
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: lcooper
+  openvpn_user: lcooper
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.99.189
+  default_ipv6_address: fe80::f816:3eff:fee4:d3bf
+  ipv4_addresses:
+    - 192.168.99.189
+  ipv6_addresses:
+    - fe80::f816:3eff:fee4:d3bf
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_5:
+  hostname: remote-employee-5
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: mallen
+  openvpn_user: mallen
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.98.196
+  default_ipv6_address: fe80::f816:3eff:fe4d:6aed
+  ipv4_addresses:
+    - 192.168.98.196
+  ipv6_addresses:
+    - fe80::f816:3eff:fe4d:6aed
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_1:
+  hostname: remote-employee-1
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: dhunt
+  openvpn_user: dhunt
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.96.254
+  default_ipv6_address: fe80::f816:3eff:fee6:31d1
+  ipv4_addresses:
+    - 192.168.96.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fee6:31d1
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_4:
+  hostname: remote-employee-4
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: lwhite
+  openvpn_user: lwhite
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.99.48
+  default_ipv6_address: fe80::f816:3eff:fe86:76d8
+  ipv4_addresses:
+    - 192.168.99.48
+  ipv6_addresses:
+    - fe80::f816:3eff:fe86:76d8
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_6:
+  hostname: remote-employee-6
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: kdurham
+  openvpn_user: kdurham
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.98.243
+  default_ipv6_address: fe80::f816:3eff:fe10:f35c
+  ipv4_addresses:
+    - 192.168.98.243
+  ipv6_addresses:
+    - fe80::f816:3eff:fe10:f35c
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+watkins_mail:
+  hostname: watkins-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 192.168.96.99
+  default_ipv6_address: fe80::f816:3eff:fe46:b644
+  ipv4_addresses:
+    - 192.168.96.99
+  ipv6_addresses:
+    - fe80::f816:3eff:fe46:b644
+  fqdns:
+    - mailserver.watkins.wardbeck.info
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+walker_mail:
+  hostname: walker-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 192.168.99.0
+  default_ipv6_address: fe80::f816:3eff:feb8:98d2
+  ipv4_addresses:
+    - 192.168.99.0
+  ipv6_addresses:
+    - fe80::f816:3eff:feb8:98d2
+  fqdns:
+    - smtp.walker.wardbeck.info
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+smith_mail:
+  hostname: smith-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 192.168.98.239
+  default_ipv6_address: fe80::f816:3eff:fe89:30f8
+  ipv4_addresses:
+    - 192.168.98.239
+  ipv6_addresses:
+    - fe80::f816:3eff:fe89:30f8
+  fqdns:
+    - smtp.smith.wardbeck.info
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+internal_employee_4:
+  hostname: internal-employee-4
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: agarcia
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.241.225
+  default_ipv6_address: fe80::f816:3eff:fecd:d05e
+  ipv4_addresses:
+    - 172.21.241.225
+  ipv6_addresses:
+    - fe80::f816:3eff:fecd:d05e
+  fqdns:
+    - employee04.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+intranet_server:
+  hostname: intranet-server
+  groups:
+    - beatservers
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.241.88
+  default_ipv6_address: fe80::f816:3eff:fe9a:43e1
+  ipv4_addresses:
+    - 172.21.241.88
+  ipv6_addresses:
+    - fe80::f816:3eff:fe9a:43e1
+  fqdns:
+    - intranet.hurstwong.wardbeck.info
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+      add_field:
+        '[@metadata][kyoushi][httpd_dirs]':
+          - /var/www/intranet.hurstwong.wardbeck.info
+          - ''
+          - /usr/share/javascript
+          - /javascript
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+cloud_share:
+  hostname: cloud-share
+  groups:
+    - dmz
+    - proxied
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.132.56.204
+  default_ipv6_address: fe80::f816:3eff:fe64:4c36
+  ipv4_addresses:
+    - 10.132.56.204
+  ipv6_addresses:
+    - fe80::f816:3eff:fe64:4c36
+  fqdns:
+    - cloud.dmz.hurstwong.wardbeck.info
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_5:
+  hostname: internal-employee-5
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: rpowell
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.240.58
+  default_ipv6_address: fe80::f816:3eff:fe19:e6b7
+  ipv4_addresses:
+    - 172.21.240.58
+  ipv6_addresses:
+    - fe80::f816:3eff:fe19:e6b7
+  fqdns:
+    - employee05.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_0:
+  hostname: ext-user-0
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.98.47
+  default_ipv6_address: fe80::f816:3eff:fef7:5d72
+  ipv4_addresses:
+    - 192.168.98.47
+  ipv6_addresses:
+    - fe80::f816:3eff:fef7:5d72
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_1:
+  hostname: internal-employee-1
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: mmiller
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.241.113
+  default_ipv6_address: fe80::f816:3eff:fe4d:434a
+  ipv4_addresses:
+    - 172.21.241.113
+  ipv6_addresses:
+    - fe80::f816:3eff:fe4d:434a
+  fqdns:
+    - employee01.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+webserver:
+  hostname: webserver
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.132.57.136
+  default_ipv6_address: fe80::f816:3eff:fec4:710e
+  ipv4_addresses:
+    - 10.132.57.136
+  ipv6_addresses:
+    - fe80::f816:3eff:fec4:710e
+  fqdns:
+    - proxy.hurstwong.wardbeck.info
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_0:
+  hostname: internal-employee-0
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: blord
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.240.147
+  default_ipv6_address: fe80::f816:3eff:fe76:5e69
+  ipv4_addresses:
+    - 172.21.240.147
+  ipv6_addresses:
+    - fe80::f816:3eff:fe76:5e69
+  fqdns:
+    - employee00.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_3:
+  hostname: internal-employee-3
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: jthompson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.241.70
+  default_ipv6_address: fe80::f816:3eff:fe69:4308
+  ipv4_addresses:
+    - 172.21.241.70
+  ipv6_addresses:
+    - fe80::f816:3eff:fe69:4308
+  fqdns:
+    - employee03.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_2:
+  hostname: internal-employee-2
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: mbennett
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.241.181
+  default_ipv6_address: fe80::f816:3eff:fe74:d49
+  ipv4_addresses:
+    - 172.21.241.181
+  ipv6_addresses:
+    - fe80::f816:3eff:fe74:d49
+  fqdns:
+    - employee02.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_3:
+  hostname: ext-user-3
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.98.187
+  default_ipv6_address: fe80::f816:3eff:fef2:e5cd
+  ipv4_addresses:
+    - 192.168.98.187
+  ipv6_addresses:
+    - fe80::f816:3eff:fef2:e5cd
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+monitoring:
+  hostname: monitoring
+  groups:
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.240.106
+  default_ipv6_address: fe80::f816:3eff:fe05:5b50
+  ipv4_addresses:
+    - 172.21.240.106
+  ipv6_addresses:
+    - fe80::f816:3eff:fe05:5b50
+  fqdns:
+    - monitoring.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: logstash/intranet-server/*system.cpu.log
+      type: metricsbeat
+      codec: json
+      add_field:
+        '[@metadata][host_override]': true
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+attacker_0:
+  hostname: attacker-0
+  groups:
+    - attacker
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.96.3
+  default_ipv6_address: fe80::f816:3eff:feb2:c576
+  ipv4_addresses:
+    - 192.168.96.3
+  ipv6_addresses:
+    - fe80::f816:3eff:feb2:c576
+  fqdns: []
+  logs:
+    - path: ait.aecid.attacker.wpdiscuz/sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 200000000
+      add_field:
+        '[@metadata][kyoushi][sm]': attacker
+    - path: ait.aecid.attacker.wpdiscuz/traffic.json
+      type: pcap
+      file_chunk_size: 200000000
+      codec: json
+    - path: dnsteal.log*
+      type: dnsteal
+      codec:
+        json:
+          ecs_compatibility: disabled
+      file_chunk_size: 200000000
+    - path: dnsteal/traffic.json
+      type: pcap
+      file_chunk_size: 20000000
+      codec: json
+  timezone: UTC
+vpn:
+  hostname: vpn
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.132.56.81
+  default_ipv6_address: fe80::f816:3eff:feea:86b5
+  ipv4_addresses:
+    - 10.132.56.81
+  ipv6_addresses:
+    - fe80::f816:3eff:feea:86b5
+  fqdns:
+    - vpn.hurstwong.wardbeck.info
+    - vpn.dmz.hurstwong.wardbeck.info
+  logs:
+    - path: openvpn.log*
+      type: openvpn
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+mail:
+  hostname: mail
+  groups:
+    - dmz
+    - dnat
+    - mailserver
+    - proxied
+    - servers
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 10.132.56.171
+  default_ipv6_address: fe80::f816:3eff:fe9b:9315
+  ipv4_addresses:
+    - 10.132.56.171
+  ipv6_addresses:
+    - fe80::f816:3eff:fe9b:9315
+  fqdns:
+    - mailserver.hurstwong.wardbeck.info
+    - mail.dmz.hurstwong.wardbeck.info
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_2:
+  hostname: ext-user-2
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.98.15
+  default_ipv6_address: fe80::f816:3eff:fe37:1eb3
+  ipv4_addresses:
+    - 192.168.98.15
+  ipv6_addresses:
+    - fe80::f816:3eff:fe37:1eb3
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_share:
+  hostname: internal-share
+  groups:
+    - beatservers
+    - intranet
+    - servers
+    - share
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.240.214
+  default_ipv6_address: fe80::f816:3eff:fe10:46c9
+  ipv4_addresses:
+    - 172.21.240.214
+  ipv6_addresses:
+    - fe80::f816:3eff:fe10:46c9
+  fqdns:
+    - share.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_1:
+  hostname: ext-user-1
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.97.122
+  default_ipv6_address: fe80::f816:3eff:fe2e:c357
+  ipv4_addresses:
+    - 192.168.97.122
+  ipv6_addresses:
+    - fe80::f816:3eff:fe2e:c357
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+inet-dns:
+  hostname: inet-dns
+  groups:
+    - dnsservers
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.127.254
+  default_ipv6_address: fe80::f816:3eff:fe06:a737
+  ipv4_addresses:
+    - 192.168.127.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fe06:a737
+  fqdns:
+    - dns.wardbeck.info
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+  timezone: UTC
+inet-firewall:
+  hostname: inet-firewall
+  groups:
+    - dnsservers
+    - firewall
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.132.56.1
+  default_ipv6_address: fe80::f816:3eff:fe9a:9b47
+  ipv4_addresses:
+    - 10.132.56.1
+    - 192.168.96.4
+    - 172.21.240.1
+  ipv6_addresses:
+    - fe80::f816:3eff:fe9a:9b47
+    - fe80::f816:3eff:fe7d:f124
+    - fe80::f816:3eff:fe1c:e9c5
+  fqdns:
+    - gateway.hurstwong.wardbeck.info
+    - hurstwong.wardbeck.info
+    - gateway.dmz.hurstwong.wardbeck.info
+    - gateway.intranet.hurstwong.wardbeck.info
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC

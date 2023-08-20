@@ -1,0 +1,973 @@
+remote_employee_4:
+  hostname: remote-employee-4
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: abrown
+  openvpn_user: abrown
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.227.67
+  default_ipv6_address: fe80::f816:3eff:febf:9dcd
+  ipv4_addresses:
+    - 192.168.227.67
+  ipv6_addresses:
+    - fe80::f816:3eff:febf:9dcd
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_1:
+  hostname: remote-employee-1
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: sbrooks
+  openvpn_user: sbrooks
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.224.189
+  default_ipv6_address: fe80::f816:3eff:fe05:1a6a
+  ipv4_addresses:
+    - 192.168.224.189
+  ipv6_addresses:
+    - fe80::f816:3eff:fe05:1a6a
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_5:
+  hostname: remote-employee-5
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: cmiranda
+  openvpn_user: cmiranda
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.225.116
+  default_ipv6_address: fe80::f816:3eff:fe7c:6d7b
+  ipv4_addresses:
+    - 192.168.225.116
+  ipv6_addresses:
+    - fe80::f816:3eff:fe7c:6d7b
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_6:
+  hostname: remote-employee-6
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: ckhan
+  openvpn_user: ckhan
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.224.233
+  default_ipv6_address: fe80::f816:3eff:fe1a:92be
+  ipv4_addresses:
+    - 192.168.224.233
+  ipv6_addresses:
+    - fe80::f816:3eff:fe1a:92be
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_0:
+  hostname: remote-employee-0
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: kobrien
+  openvpn_user: kobrien
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.226.96
+  default_ipv6_address: fe80::f816:3eff:fe96:afa7
+  ipv4_addresses:
+    - 192.168.226.96
+  ipv6_addresses:
+    - fe80::f816:3eff:fe96:afa7
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+attacker_0:
+  hostname: attacker-0
+  groups:
+    - attacker
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.226.71
+  default_ipv6_address: fe80::f816:3eff:fe6b:841f
+  ipv4_addresses:
+    - 192.168.226.71
+  ipv6_addresses:
+    - fe80::f816:3eff:fe6b:841f
+  fqdns: []
+  logs:
+    - path: ait.aecid.attacker.wpdiscuz/sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 200000000
+      add_field:
+        '[@metadata][kyoushi][sm]': attacker
+    - path: ait.aecid.attacker.wpdiscuz/traffic.json
+      type: pcap
+      file_chunk_size: 200000000
+      codec: json
+    - path: dnsteal.log*
+      type: dnsteal
+      codec:
+        json:
+          ecs_compatibility: disabled
+      file_chunk_size: 200000000
+    - path: dnsteal/traffic.json
+      type: pcap
+      file_chunk_size: 20000000
+      codec: json
+  timezone: UTC
+remote_employee_3:
+  hostname: remote-employee-3
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: wfrench
+  openvpn_user: wfrench
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.224.143
+  default_ipv6_address: fe80::f816:3eff:fe86:d22f
+  ipv4_addresses:
+    - 192.168.224.143
+  ipv6_addresses:
+    - fe80::f816:3eff:fe86:d22f
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_7:
+  hostname: remote-employee-7
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jwilkinson
+  openvpn_user: jwilkinson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.225.175
+  default_ipv6_address: fe80::f816:3eff:fe5f:edc2
+  ipv4_addresses:
+    - 192.168.225.175
+  ipv6_addresses:
+    - fe80::f816:3eff:fe5f:edc2
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_2:
+  hostname: remote-employee-2
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: aanderson
+  openvpn_user: aanderson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.224.45
+  default_ipv6_address: fe80::f816:3eff:fed4:2d43
+  ipv4_addresses:
+    - 192.168.224.45
+  ipv6_addresses:
+    - fe80::f816:3eff:fed4:2d43
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+vpn:
+  hostname: vpn
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.182.193.78
+  default_ipv6_address: fe80::f816:3eff:fe24:4350
+  ipv4_addresses:
+    - 10.182.193.78
+  ipv6_addresses:
+    - fe80::f816:3eff:fe24:4350
+  fqdns:
+    - vpn.hallbrown.wilson.com
+    - vpn.dmz.hallbrown.wilson.com
+  logs:
+    - path: openvpn.log*
+      type: openvpn
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_1:
+  hostname: internal-employee-1
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: alloyd
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.243.237
+  default_ipv6_address: fe80::f816:3eff:feee:2d2
+  ipv4_addresses:
+    - 172.26.243.237
+  ipv6_addresses:
+    - fe80::f816:3eff:feee:2d2
+  fqdns:
+    - employee01.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_7:
+  hostname: ext-user-7
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.225.209
+  default_ipv6_address: fe80::f816:3eff:fe44:b298
+  ipv4_addresses:
+    - 192.168.225.209
+  ipv6_addresses:
+    - fe80::f816:3eff:fe44:b298
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_6:
+  hostname: internal-employee-6
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: pwood
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.242.84
+  default_ipv6_address: fe80::f816:3eff:fef1:8429
+  ipv4_addresses:
+    - 172.26.242.84
+  ipv6_addresses:
+    - fe80::f816:3eff:fef1:8429
+  fqdns:
+    - employee06.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_2:
+  hostname: ext-user-2
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.226.13
+  default_ipv6_address: fe80::f816:3eff:fe07:795d
+  ipv4_addresses:
+    - 192.168.226.13
+  ipv6_addresses:
+    - fe80::f816:3eff:fe07:795d
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+lane_mail:
+  hostname: lane-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.226.198
+  default_ipv6_address: fe80::f816:3eff:fe3f:1022
+  ipv4_addresses:
+    - 192.168.226.198
+  ipv6_addresses:
+    - fe80::f816:3eff:fe3f:1022
+  fqdns:
+    - mailserver.lane.wilson.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+internal_employee_5:
+  hostname: internal-employee-5
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: lclayton
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.241.140
+  default_ipv6_address: fe80::f816:3eff:fefc:ba5e
+  ipv4_addresses:
+    - 172.26.241.140
+  ipv6_addresses:
+    - fe80::f816:3eff:fefc:ba5e
+  fqdns:
+    - employee05.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_0:
+  hostname: internal-employee-0
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: mfernandez
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.241.183
+  default_ipv6_address: fe80::f816:3eff:feae:bb81
+  ipv4_addresses:
+    - 172.26.241.183
+  ipv6_addresses:
+    - fe80::f816:3eff:feae:bb81
+  fqdns:
+    - employee00.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_2:
+  hostname: internal-employee-2
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: gallen
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.242.89
+  default_ipv6_address: fe80::f816:3eff:fe59:74e6
+  ipv4_addresses:
+    - 172.26.242.89
+  ipv6_addresses:
+    - fe80::f816:3eff:fe59:74e6
+  fqdns:
+    - employee02.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_3:
+  hostname: internal-employee-3
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: ncantu
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.240.180
+  default_ipv6_address: fe80::f816:3eff:feb7:f5dd
+  ipv4_addresses:
+    - 172.26.240.180
+  ipv6_addresses:
+    - fe80::f816:3eff:feb7:f5dd
+  fqdns:
+    - employee03.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_4:
+  hostname: internal-employee-4
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: dryan
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.243.99
+  default_ipv6_address: fe80::f816:3eff:fe0e:4157
+  ipv4_addresses:
+    - 172.26.243.99
+  ipv6_addresses:
+    - fe80::f816:3eff:fe0e:4157
+  fqdns:
+    - employee04.intranet.hallbrown.wilson.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_share:
+  hostname: internal-share
+  groups:
+    - beatservers
+    - intranet
+    - servers
+    - share
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.240.200
+  default_ipv6_address: fe80::f816:3eff:fe84:8902
+  ipv4_addresses:
+    - 172.26.240.200
+  ipv6_addresses:
+    - fe80::f816:3eff:fe84:8902
+  fqdns:
+    - share.intranet.hallbrown.wilson.com
+  logs:
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_8:
+  hostname: ext-user-8
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.225.152
+  default_ipv6_address: fe80::f816:3eff:fe24:25d2
+  ipv4_addresses:
+    - 192.168.225.152
+  ipv6_addresses:
+    - fe80::f816:3eff:fe24:25d2
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_4:
+  hostname: ext-user-4
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.224.62
+  default_ipv6_address: fe80::f816:3eff:feac:d68e
+  ipv4_addresses:
+    - 192.168.224.62
+  ipv6_addresses:
+    - fe80::f816:3eff:feac:d68e
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+cloud_share:
+  hostname: cloud-share
+  groups:
+    - dmz
+    - proxied
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.182.194.196
+  default_ipv6_address: fe80::f816:3eff:fe71:ebe
+  ipv4_addresses:
+    - 10.182.194.196
+  ipv6_addresses:
+    - fe80::f816:3eff:fe71:ebe
+  fqdns:
+    - cloud.dmz.hallbrown.wilson.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+webserver:
+  hostname: webserver
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.182.194.5
+  default_ipv6_address: fe80::f816:3eff:fe32:e60e
+  ipv4_addresses:
+    - 10.182.194.5
+  ipv6_addresses:
+    - fe80::f816:3eff:fe32:e60e
+  fqdns:
+    - proxy.hallbrown.wilson.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_1:
+  hostname: ext-user-1
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.227.234
+  default_ipv6_address: fe80::f816:3eff:fe99:98ba
+  ipv4_addresses:
+    - 192.168.227.234
+  ipv6_addresses:
+    - fe80::f816:3eff:fe99:98ba
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+monitoring:
+  hostname: monitoring
+  groups:
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.242.35
+  default_ipv6_address: fe80::f816:3eff:fec8:9e75
+  ipv4_addresses:
+    - 172.26.242.35
+  ipv6_addresses:
+    - fe80::f816:3eff:fec8:9e75
+  fqdns:
+    - monitoring.intranet.hallbrown.wilson.com
+  logs:
+    - path: logstash/intranet-server/*system.cpu.log
+      type: metricsbeat
+      codec: json
+      add_field:
+        '[@metadata][host_override]': true
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+intranet_server:
+  hostname: intranet-server
+  groups:
+    - beatservers
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.26.243.167
+  default_ipv6_address: fe80::f816:3eff:fe68:860c
+  ipv4_addresses:
+    - 172.26.243.167
+  ipv6_addresses:
+    - fe80::f816:3eff:fe68:860c
+  fqdns:
+    - intranet.hallbrown.wilson.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+      add_field:
+        '[@metadata][kyoushi][httpd_dirs]':
+          - /var/www/intranet.hallbrown.wilson.com
+          - ''
+          - /usr/share/javascript
+          - /javascript
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_5:
+  hostname: ext-user-5
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.224.100
+  default_ipv6_address: fe80::f816:3eff:fe29:b982
+  ipv4_addresses:
+    - 192.168.224.100
+  ipv6_addresses:
+    - fe80::f816:3eff:fe29:b982
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_6:
+  hostname: ext-user-6
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.227.65
+  default_ipv6_address: fe80::f816:3eff:fe2b:350e
+  ipv4_addresses:
+    - 192.168.227.65
+  ipv6_addresses:
+    - fe80::f816:3eff:fe2b:350e
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+wilsonahmed_mail:
+  hostname: wilsonahmed-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.224.185
+  default_ipv6_address: fe80::f816:3eff:fee8:b90
+  ipv4_addresses:
+    - 192.168.224.185
+  ipv6_addresses:
+    - fe80::f816:3eff:fee8:b90
+  fqdns:
+    - mailserver.wilsonahmed.wilson.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+mail:
+  hostname: mail
+  groups:
+    - dmz
+    - dnat
+    - mailserver
+    - proxied
+    - servers
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 10.182.193.181
+  default_ipv6_address: fe80::f816:3eff:fe4c:1dda
+  ipv4_addresses:
+    - 10.182.193.181
+  ipv6_addresses:
+    - fe80::f816:3eff:fe4c:1dda
+  fqdns:
+    - mailserver.hallbrown.wilson.com
+    - mail.dmz.hallbrown.wilson.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_3:
+  hostname: ext-user-3
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.226.242
+  default_ipv6_address: fe80::f816:3eff:fed5:b728
+  ipv4_addresses:
+    - 192.168.226.242
+  ipv6_addresses:
+    - fe80::f816:3eff:fed5:b728
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_0:
+  hostname: ext-user-0
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.225.45
+  default_ipv6_address: fe80::f816:3eff:fea8:8ce2
+  ipv4_addresses:
+    - 192.168.225.45
+  ipv6_addresses:
+    - fe80::f816:3eff:fea8:8ce2
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+inet-firewall:
+  hostname: inet-firewall
+  groups:
+    - dnsservers
+    - firewall
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.182.192.1
+  default_ipv6_address: fe80::f816:3eff:fe3f:92f1
+  ipv4_addresses:
+    - 10.182.192.1
+    - 192.168.224.4
+    - 172.26.240.1
+  ipv6_addresses:
+    - fe80::f816:3eff:fe3f:92f1
+    - fe80::f816:3eff:fead:7a18
+    - fe80::f816:3eff:fed3:1fcd
+  fqdns:
+    - gateway.hallbrown.wilson.com
+    - hallbrown.wilson.com
+    - gateway.dmz.hallbrown.wilson.com
+    - gateway.intranet.hallbrown.wilson.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+inet-dns:
+  hostname: inet-dns
+  groups:
+    - dnsservers
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.239.254
+  default_ipv6_address: fe80::f816:3eff:fef9:eadd
+  ipv4_addresses:
+    - 192.168.239.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fef9:eadd
+  fqdns:
+    - dns.wilson.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+  timezone: UTC

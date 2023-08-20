@@ -1,0 +1,633 @@
+remote_employee_1:
+  hostname: remote-employee-1
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: twhite
+  openvpn_user: twhite
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.230.95
+  default_ipv6_address: fe80::f816:3eff:fefb:8b25
+  ipv4_addresses:
+    - 192.168.230.95
+  ipv6_addresses:
+    - fe80::f816:3eff:fefb:8b25
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+attacker_0:
+  hostname: attacker-0
+  groups:
+    - attacker
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.230.122
+  default_ipv6_address: fe80::f816:3eff:fe1d:2fc5
+  ipv4_addresses:
+    - 192.168.230.122
+  ipv6_addresses:
+    - fe80::f816:3eff:fe1d:2fc5
+  fqdns: []
+  logs:
+    - path: ait.aecid.attacker.wpdiscuz/sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 200000000
+      add_field:
+        '[@metadata][kyoushi][sm]': attacker
+    - path: ait.aecid.attacker.wpdiscuz/traffic.json
+      type: pcap
+      file_chunk_size: 200000000
+      codec: json
+    - path: dnsteal.log*
+      type: dnsteal
+      codec:
+        json:
+          ecs_compatibility: disabled
+      file_chunk_size: 200000000
+    - path: dnsteal/traffic.json
+      type: pcap
+      file_chunk_size: 20000000
+      codec: json
+  timezone: UTC
+remote_employee_2:
+  hostname: remote-employee-2
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jhall
+  openvpn_user: jhall
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.230.165
+  default_ipv6_address: fe80::f816:3eff:fec4:1e0b
+  ipv4_addresses:
+    - 192.168.230.165
+  ipv6_addresses:
+    - fe80::f816:3eff:fec4:1e0b
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_0:
+  hostname: remote-employee-0
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: ahayes
+  openvpn_user: ahayes
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.231.127
+  default_ipv6_address: fe80::f816:3eff:feea:4536
+  ipv4_addresses:
+    - 192.168.231.127
+  ipv6_addresses:
+    - fe80::f816:3eff:feea:4536
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+cloud_share:
+  hostname: cloud-share
+  groups:
+    - dmz
+    - proxied
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.19.130.106
+  default_ipv6_address: fe80::f816:3eff:fe5b:275b
+  ipv4_addresses:
+    - 172.19.130.106
+  ipv6_addresses:
+    - fe80::f816:3eff:fe5b:275b
+  fqdns:
+    - cloud.dmz.smith.russellmitchell.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+webserver:
+  hostname: webserver
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.19.130.68
+  default_ipv6_address: fe80::f816:3eff:fe47:ba82
+  ipv4_addresses:
+    - 172.19.130.68
+  ipv6_addresses:
+    - fe80::f816:3eff:fe47:ba82
+  fqdns:
+    - proxy.smith.russellmitchell.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+morris_mail:
+  hostname: morris-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.231.164
+  default_ipv6_address: fe80::f816:3eff:feb0:71cb
+  ipv4_addresses:
+    - 192.168.231.164
+  ipv6_addresses:
+    - fe80::f816:3eff:feb0:71cb
+  fqdns:
+    - mailserver.morris.russellmitchell.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+davey_mail:
+  hostname: davey-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.231.56
+  default_ipv6_address: fe80::f816:3eff:fe30:e67c
+  ipv4_addresses:
+    - 192.168.231.56
+  ipv6_addresses:
+    - fe80::f816:3eff:fe30:e67c
+  fqdns:
+    - smtp.davey.russellmitchell.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+vpn:
+  hostname: vpn
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.19.131.174
+  default_ipv6_address: fe80::f816:3eff:fe1b:6d09
+  ipv4_addresses:
+    - 172.19.131.174
+  ipv6_addresses:
+    - fe80::f816:3eff:fe1b:6d09
+  fqdns:
+    - vpn.smith.russellmitchell.com
+    - vpn.dmz.smith.russellmitchell.com
+  logs:
+    - path: openvpn.log*
+      type: openvpn
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+intranet_server:
+  hostname: intranet-server
+  groups:
+    - beatservers
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.2.4
+  default_ipv6_address: fe80::f816:3eff:fe75:ba2b
+  ipv4_addresses:
+    - 10.143.2.4
+  ipv6_addresses:
+    - fe80::f816:3eff:fe75:ba2b
+  fqdns:
+    - intranet.smith.russellmitchell.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+      add_field:
+        '[@metadata][kyoushi][httpd_dirs]':
+          - /var/www/intranet.smith.russellmitchell.com
+          - ''
+          - /usr/share/javascript
+          - /javascript
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_1:
+  hostname: internal-employee-1
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: dellis
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.2.91
+  default_ipv6_address: fe80::f816:3eff:fed4:4084
+  ipv4_addresses:
+    - 10.143.2.91
+  ipv6_addresses:
+    - fe80::f816:3eff:fed4:4084
+  fqdns:
+    - employee01.intranet.smith.russellmitchell.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_3:
+  hostname: internal-employee-3
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: rblake
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.3.65
+  default_ipv6_address: fe80::f816:3eff:fe5e:79d8
+  ipv4_addresses:
+    - 10.143.3.65
+  ipv6_addresses:
+    - fe80::f816:3eff:fe5e:79d8
+  fqdns:
+    - employee03.intranet.smith.russellmitchell.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_1:
+  hostname: ext-user-1
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.231.180
+  default_ipv6_address: fe80::f816:3eff:fe90:88b6
+  ipv4_addresses:
+    - 192.168.231.180
+  ipv6_addresses:
+    - fe80::f816:3eff:fe90:88b6
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_0:
+  hostname: ext-user-0
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.231.75
+  default_ipv6_address: fe80::f816:3eff:fe46:310
+  ipv4_addresses:
+    - 192.168.231.75
+  ipv6_addresses:
+    - fe80::f816:3eff:fe46:310
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_2:
+  hostname: ext-user-2
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.231.68
+  default_ipv6_address: fe80::f816:3eff:fe3a:4c8e
+  ipv4_addresses:
+    - 192.168.231.68
+  ipv6_addresses:
+    - fe80::f816:3eff:fe3a:4c8e
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_share:
+  hostname: internal-share
+  groups:
+    - beatservers
+    - intranet
+    - servers
+    - share
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.0.103
+  default_ipv6_address: fe80::f816:3eff:fe46:ce20
+  ipv4_addresses:
+    - 10.143.0.103
+  ipv6_addresses:
+    - fe80::f816:3eff:fe46:ce20
+  fqdns:
+    - share.intranet.smith.russellmitchell.com
+  logs:
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+monitoring:
+  hostname: monitoring
+  groups:
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.0.35
+  default_ipv6_address: fe80::f816:3eff:fe8d:b97c
+  ipv4_addresses:
+    - 10.143.0.35
+  ipv6_addresses:
+    - fe80::f816:3eff:fe8d:b97c
+  fqdns:
+    - monitoring.intranet.smith.russellmitchell.com
+  logs:
+    - path: logstash/intranet-server/*system.cpu.log
+      type: metricsbeat
+      codec: json
+      add_field:
+        '[@metadata][host_override]': true
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_2:
+  hostname: internal-employee-2
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: tstevenson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.2.25
+  default_ipv6_address: fe80::f816:3eff:fe39:f31d
+  ipv4_addresses:
+    - 10.143.2.25
+  ipv6_addresses:
+    - fe80::f816:3eff:fe39:f31d
+  fqdns:
+    - employee02.intranet.smith.russellmitchell.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+mail:
+  hostname: mail
+  groups:
+    - dmz
+    - dnat
+    - mailserver
+    - proxied
+    - servers
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 172.19.130.4
+  default_ipv6_address: fe80::f816:3eff:fee8:e809
+  ipv4_addresses:
+    - 172.19.130.4
+  ipv6_addresses:
+    - fe80::f816:3eff:fee8:e809
+  fqdns:
+    - mailserver.smith.russellmitchell.com
+    - mail.dmz.smith.russellmitchell.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_0:
+  hostname: internal-employee-0
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: mmorgan
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.143.1.78
+  default_ipv6_address: fe80::f816:3eff:fe14:ac4e
+  ipv4_addresses:
+    - 10.143.1.78
+  ipv6_addresses:
+    - fe80::f816:3eff:fe14:ac4e
+  fqdns:
+    - employee00.intranet.smith.russellmitchell.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+inet-dns:
+  hostname: inet-dns
+  groups:
+    - dnsservers
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.231.254
+  default_ipv6_address: fe80::f816:3eff:fe43:b255
+  ipv4_addresses:
+    - 192.168.231.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fe43:b255
+  fqdns:
+    - dns.russellmitchell.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+  timezone: UTC
+inet-firewall:
+  hostname: inet-firewall
+  groups:
+    - dnsservers
+    - firewall
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.19.128.1
+  default_ipv6_address: fe80::f816:3eff:fe5c:f311
+  ipv4_addresses:
+    - 172.19.128.1
+    - 192.168.230.4
+    - 10.143.0.1
+  ipv6_addresses:
+    - fe80::f816:3eff:fe5c:f311
+    - fe80::f816:3eff:fee4:22b0
+    - fe80::f816:3eff:fea8:c35e
+  fqdns:
+    - gateway.smith.russellmitchell.com
+    - smith.russellmitchell.com
+    - gateway.dmz.smith.russellmitchell.com
+    - gateway.intranet.smith.russellmitchell.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC

@@ -1,0 +1,830 @@
+ext_user_4:
+  hostname: ext-user-4
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.1.118
+  default_ipv6_address: fe80::f816:3eff:feef:8be6
+  ipv4_addresses:
+    - 10.229.1.118
+  ipv6_addresses:
+    - fe80::f816:3eff:feef:8be6
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_3:
+  hostname: ext-user-3
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.1.182
+  default_ipv6_address: fe80::f816:3eff:fea7:46e2
+  ipv4_addresses:
+    - 10.229.1.182
+  ipv6_addresses:
+    - fe80::f816:3eff:fea7:46e2
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_1:
+  hostname: remote-employee-1
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: apierce
+  openvpn_user: apierce
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.1.138
+  default_ipv6_address: fe80::f816:3eff:fe15:8fad
+  ipv4_addresses:
+    - 10.229.1.138
+  ipv6_addresses:
+    - fe80::f816:3eff:fe15:8fad
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_2:
+  hostname: ext-user-2
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.0.23
+  default_ipv6_address: fe80::f816:3eff:fefa:9d9c
+  ipv4_addresses:
+    - 10.229.0.23
+  ipv6_addresses:
+    - fe80::f816:3eff:fefa:9d9c
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_2:
+  hostname: remote-employee-2
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: sfitzgerald
+  openvpn_user: sfitzgerald
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.3.237
+  default_ipv6_address: fe80::f816:3eff:fe64:f30a
+  ipv4_addresses:
+    - 10.229.3.237
+  ipv6_addresses:
+    - fe80::f816:3eff:fe64:f30a
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_0:
+  hostname: remote-employee-0
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: gmorgan
+  openvpn_user: gmorgan
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.3.112
+  default_ipv6_address: fe80::f816:3eff:fe17:4551
+  ipv4_addresses:
+    - 10.229.3.112
+  ipv6_addresses:
+    - fe80::f816:3eff:fe17:4551
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_1:
+  hostname: ext-user-1
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.0.80
+  default_ipv6_address: fe80::f816:3eff:fec4:3667
+  ipv4_addresses:
+    - 10.229.0.80
+  ipv6_addresses:
+    - fe80::f816:3eff:fec4:3667
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_5:
+  hostname: ext-user-5
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.2.234
+  default_ipv6_address: fe80::f816:3eff:fe19:a3da
+  ipv4_addresses:
+    - 10.229.2.234
+  ipv6_addresses:
+    - fe80::f816:3eff:fe19:a3da
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+webserver:
+  hostname: webserver
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.129.224
+  default_ipv6_address: fe80::f816:3eff:fe1f:a33a
+  ipv4_addresses:
+    - 172.21.129.224
+  ipv6_addresses:
+    - fe80::f816:3eff:fe1f:a33a
+  fqdns:
+    - proxy.smith.santos.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_0:
+  hostname: ext-user-0
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.1.1
+  default_ipv6_address: fe80::f816:3eff:fece:d612
+  ipv4_addresses:
+    - 10.229.1.1
+  ipv6_addresses:
+    - fe80::f816:3eff:fece:d612
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_5:
+  hostname: internal-employee-5
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: djarvis
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.95
+  default_ipv6_address: fe80::f816:3eff:fef9:79f3
+  ipv4_addresses:
+    - 192.168.104.95
+  ipv6_addresses:
+    - fe80::f816:3eff:fef9:79f3
+  fqdns:
+    - employee05.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_7:
+  hostname: internal-employee-7
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: cmckenzie
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.133
+  default_ipv6_address: fe80::f816:3eff:fedc:2480
+  ipv4_addresses:
+    - 192.168.104.133
+  ipv6_addresses:
+    - fe80::f816:3eff:fedc:2480
+  fqdns:
+    - employee07.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_3:
+  hostname: internal-employee-3
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: cturner
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.98
+  default_ipv6_address: fe80::f816:3eff:fed9:b65f
+  ipv4_addresses:
+    - 192.168.104.98
+  ipv6_addresses:
+    - fe80::f816:3eff:fed9:b65f
+  fqdns:
+    - employee03.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+monitoring:
+  hostname: monitoring
+  groups:
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.214
+  default_ipv6_address: fe80::f816:3eff:fedf:bb98
+  ipv4_addresses:
+    - 192.168.104.214
+  ipv6_addresses:
+    - fe80::f816:3eff:fedf:bb98
+  fqdns:
+    - monitoring.intranet.smith.santos.com
+  logs:
+    - path: logstash/intranet-server/*system.cpu.log
+      type: metricsbeat
+      codec: json
+      add_field:
+        '[@metadata][host_override]': true
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+rogersturnbull_mail:
+  hostname: rogersturnbull-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 10.229.0.32
+  default_ipv6_address: fe80::f816:3eff:fe11:4c2f
+  ipv4_addresses:
+    - 10.229.0.32
+  ipv6_addresses:
+    - fe80::f816:3eff:fe11:4c2f
+  fqdns:
+    - mailserver.rogersturnbull.santos.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+internal_employee_4:
+  hostname: internal-employee-4
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: awatson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.141
+  default_ipv6_address: fe80::f816:3eff:fe92:ca2d
+  ipv4_addresses:
+    - 192.168.104.141
+  ipv6_addresses:
+    - fe80::f816:3eff:fe92:ca2d
+  fqdns:
+    - employee04.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_6:
+  hostname: internal-employee-6
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: vsharp
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.125
+  default_ipv6_address: fe80::f816:3eff:fedf:8d98
+  ipv4_addresses:
+    - 192.168.104.125
+  ipv6_addresses:
+    - fe80::f816:3eff:fedf:8d98
+  fqdns:
+    - employee06.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_2:
+  hostname: internal-employee-2
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: cscott
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.88
+  default_ipv6_address: fe80::f816:3eff:fe01:a796
+  ipv4_addresses:
+    - 192.168.104.88
+  ipv6_addresses:
+    - fe80::f816:3eff:fe01:a796
+  fqdns:
+    - employee02.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_0:
+  hostname: internal-employee-0
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: cashton
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.198
+  default_ipv6_address: fe80::f816:3eff:fea1:7bcb
+  ipv4_addresses:
+    - 192.168.104.198
+  ipv6_addresses:
+    - fe80::f816:3eff:fea1:7bcb
+  fqdns:
+    - employee00.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_share:
+  hostname: internal-share
+  groups:
+    - beatservers
+    - intranet
+    - servers
+    - share
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.218
+  default_ipv6_address: fe80::f816:3eff:fe49:e431
+  ipv4_addresses:
+    - 192.168.104.218
+  ipv6_addresses:
+    - fe80::f816:3eff:fe49:e431
+  fqdns:
+    - share.intranet.smith.santos.com
+  logs:
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+hayes_mail:
+  hostname: hayes-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 10.229.2.25
+  default_ipv6_address: fe80::f816:3eff:feae:a261
+  ipv4_addresses:
+    - 10.229.2.25
+  ipv6_addresses:
+    - fe80::f816:3eff:feae:a261
+  fqdns:
+    - smtp.hayes.santos.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+mail:
+  hostname: mail
+  groups:
+    - dmz
+    - dnat
+    - mailserver
+    - proxied
+    - servers
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 172.21.131.50
+  default_ipv6_address: fe80::f816:3eff:fe76:87f3
+  ipv4_addresses:
+    - 172.21.131.50
+  ipv6_addresses:
+    - fe80::f816:3eff:fe76:87f3
+  fqdns:
+    - mailserver.smith.santos.com
+    - mail.dmz.smith.santos.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+cloud_share:
+  hostname: cloud-share
+  groups:
+    - dmz
+    - proxied
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.128.54
+  default_ipv6_address: fe80::f816:3eff:fe6f:7d56
+  ipv4_addresses:
+    - 172.21.128.54
+  ipv6_addresses:
+    - fe80::f816:3eff:fe6f:7d56
+  fqdns:
+    - cloud.dmz.smith.santos.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+vpn:
+  hostname: vpn
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.21.128.119
+  default_ipv6_address: fe80::f816:3eff:fe96:57b1
+  ipv4_addresses:
+    - 172.21.128.119
+  ipv6_addresses:
+    - fe80::f816:3eff:fe96:57b1
+  fqdns:
+    - vpn.smith.santos.com
+    - vpn.dmz.smith.santos.com
+  logs:
+    - path: openvpn.log*
+      type: openvpn
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_8:
+  hostname: internal-employee-8
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: bthomas
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.4
+  default_ipv6_address: fe80::f816:3eff:fe96:891d
+  ipv4_addresses:
+    - 192.168.104.4
+  ipv6_addresses:
+    - fe80::f816:3eff:fe96:891d
+  fqdns:
+    - employee08.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+intranet_server:
+  hostname: intranet-server
+  groups:
+    - beatservers
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.155
+  default_ipv6_address: fe80::f816:3eff:fe9d:4bb4
+  ipv4_addresses:
+    - 192.168.104.155
+  ipv6_addresses:
+    - fe80::f816:3eff:fe9d:4bb4
+  fqdns:
+    - intranet.smith.santos.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+      add_field:
+        '[@metadata][kyoushi][httpd_dirs]':
+          - /var/www/intranet.smith.santos.com
+          - ''
+          - /usr/share/javascript
+          - /javascript
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+attacker_0:
+  hostname: attacker-0
+  groups:
+    - attacker
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.2.216
+  default_ipv6_address: fe80::f816:3eff:fe4e:3ece
+  ipv4_addresses:
+    - 10.229.2.216
+  ipv6_addresses:
+    - fe80::f816:3eff:fe4e:3ece
+  fqdns: []
+  logs:
+    - path: ait.aecid.attacker.wpdiscuz/sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 200000000
+      add_field:
+        '[@metadata][kyoushi][sm]': attacker
+    - path: ait.aecid.attacker.wpdiscuz/traffic.json
+      type: pcap
+      file_chunk_size: 200000000
+      codec: json
+    - path: dnsteal.log*
+      type: dnsteal
+      codec:
+        json:
+          ecs_compatibility: disabled
+      file_chunk_size: 200000000
+    - path: dnsteal/traffic.json
+      type: pcap
+      file_chunk_size: 20000000
+      codec: json
+  timezone: UTC
+internal_employee_1:
+  hostname: internal-employee-1
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: tjohnson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.104.81
+  default_ipv6_address: fe80::f816:3eff:fe9c:aa8d
+  ipv4_addresses:
+    - 192.168.104.81
+  ipv6_addresses:
+    - fe80::f816:3eff:fe9c:aa8d
+  fqdns:
+    - employee01.intranet.smith.santos.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+inet-dns:
+  hostname: inet-dns
+  groups:
+    - dnsservers
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.255.254
+  default_ipv6_address: fe80::f816:3eff:fe83:9273
+  ipv4_addresses:
+    - 10.229.255.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fe83:9273
+  fqdns:
+    - dns.santos.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+  timezone: UTC
+inet-firewall:
+  hostname: inet-firewall
+  groups:
+    - dnsservers
+    - firewall
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.229.0.4
+  default_ipv6_address: fe80::f816:3eff:fea9:ab09
+  ipv4_addresses:
+    - 10.229.0.4
+    - 172.21.128.1
+    - 192.168.104.1
+  ipv6_addresses:
+    - fe80::f816:3eff:fea9:ab09
+    - fe80::f816:3eff:fe52:1462
+    - fe80::f816:3eff:fe5a:28a8
+  fqdns:
+    - gateway.smith.santos.com
+    - smith.santos.com
+    - gateway.dmz.smith.santos.com
+    - gateway.intranet.smith.santos.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+

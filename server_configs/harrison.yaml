@@ -1,0 +1,752 @@
+internal_employee_1:
+  hostname: internal-employee-1
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: hsmith
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.129.2
+  default_ipv6_address: fe80::f816:3eff:fee3:351e
+  ipv4_addresses:
+    - 192.168.129.2
+  ipv6_addresses:
+    - fe80::f816:3eff:fee3:351e
+  fqdns:
+    - employee01.intranet.mannsmith.harrison.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_0:
+  hostname: internal-employee-0
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: moliver
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.55
+  default_ipv6_address: fe80::f816:3eff:fe83:5bb4
+  ipv4_addresses:
+    - 192.168.131.55
+  ipv6_addresses:
+    - fe80::f816:3eff:fe83:5bb4
+  fqdns:
+    - employee00.intranet.mannsmith.harrison.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_5:
+  hostname: remote-employee-5
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jmoreno
+  openvpn_user: jmoreno
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.59
+  default_ipv6_address: fe80::f816:3eff:fe35:2919
+  ipv4_addresses:
+    - 172.28.193.59
+  ipv6_addresses:
+    - fe80::f816:3eff:fe35:2919
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_2:
+  hostname: internal-employee-2
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: jward
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.128.227
+  default_ipv6_address: fe80::f816:3eff:fe50:bc3a
+  ipv4_addresses:
+    - 192.168.128.227
+  ipv6_addresses:
+    - fe80::f816:3eff:fe50:bc3a
+  fqdns:
+    - employee02.intranet.mannsmith.harrison.com
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_2:
+  hostname: remote-employee-2
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: lwright
+  openvpn_user: lwright
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.196
+  default_ipv6_address: fe80::f816:3eff:fe30:8686
+  ipv4_addresses:
+    - 172.28.193.196
+  ipv6_addresses:
+    - fe80::f816:3eff:fe30:8686
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+smith_mail:
+  hostname: smith-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 172.28.192.97
+  default_ipv6_address: fe80::f816:3eff:fe71:840
+  ipv4_addresses:
+    - 172.28.192.97
+  ipv6_addresses:
+    - fe80::f816:3eff:fe71:840
+  fqdns:
+    - mailserver.smith.harrison.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+ext_user_2:
+  hostname: ext-user-2
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.70
+  default_ipv6_address: fe80::f816:3eff:fe69:dcd8
+  ipv4_addresses:
+    - 172.28.193.70
+  ipv6_addresses:
+    - fe80::f816:3eff:fe69:dcd8
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_1:
+  hostname: ext-user-1
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.195.222
+  default_ipv6_address: fe80::f816:3eff:fea8:c549
+  ipv4_addresses:
+    - 172.28.195.222
+  ipv6_addresses:
+    - fe80::f816:3eff:fea8:c549
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_4:
+  hostname: ext-user-4
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.192.250
+  default_ipv6_address: fe80::f816:3eff:fe2e:dce4
+  ipv4_addresses:
+    - 172.28.192.250
+  ipv6_addresses:
+    - fe80::f816:3eff:fe2e:dce4
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_3:
+  hostname: ext-user-3
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.110
+  default_ipv6_address: fe80::f816:3eff:feb5:dfdc
+  ipv4_addresses:
+    - 172.28.193.110
+  ipv6_addresses:
+    - fe80::f816:3eff:feb5:dfdc
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+taylor_mail:
+  hostname: taylor-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 172.28.192.7
+  default_ipv6_address: fe80::f816:3eff:feef:df74
+  ipv4_addresses:
+    - 172.28.192.7
+  ipv6_addresses:
+    - fe80::f816:3eff:feef:df74
+  fqdns:
+    - smtp.taylor.harrison.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+vpn:
+  hostname: vpn
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.237.1.238
+  default_ipv6_address: fe80::f816:3eff:fefa:1a96
+  ipv4_addresses:
+    - 10.237.1.238
+  ipv6_addresses:
+    - fe80::f816:3eff:fefa:1a96
+  fqdns:
+    - vpn.mannsmith.harrison.com
+    - vpn.dmz.mannsmith.harrison.com
+  logs:
+    - path: openvpn.log*
+      type: openvpn
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+remote_employee_4:
+  hostname: remote-employee-4
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jfoster
+  openvpn_user: jfoster
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.192.70
+  default_ipv6_address: fe80::f816:3eff:fecc:784b
+  ipv4_addresses:
+    - 172.28.192.70
+  ipv6_addresses:
+    - fe80::f816:3eff:fecc:784b
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_1:
+  hostname: remote-employee-1
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: rchambers
+  openvpn_user: rchambers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.88
+  default_ipv6_address: fe80::f816:3eff:fe39:7d43
+  ipv4_addresses:
+    - 172.28.193.88
+  ipv6_addresses:
+    - fe80::f816:3eff:fe39:7d43
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_3:
+  hostname: remote-employee-3
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jthompson
+  openvpn_user: jthompson
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.195.110
+  default_ipv6_address: fe80::f816:3eff:feea:2336
+  ipv4_addresses:
+    - 172.28.195.110
+  ipv6_addresses:
+    - fe80::f816:3eff:feea:2336
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_share:
+  hostname: internal-share
+  groups:
+    - beatservers
+    - intranet
+    - servers
+    - share
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.109
+  default_ipv6_address: fe80::f816:3eff:fe78:f3d3
+  ipv4_addresses:
+    - 192.168.131.109
+  ipv6_addresses:
+    - fe80::f816:3eff:fe78:f3d3
+  fqdns:
+    - share.intranet.mannsmith.harrison.com
+  logs:
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+remote_employee_0:
+  hostname: remote-employee-0
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jgreen
+  openvpn_user: jgreen
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.192.61
+  default_ipv6_address: fe80::f816:3eff:fe90:3ff9
+  ipv4_addresses:
+    - 172.28.192.61
+  ipv6_addresses:
+    - fe80::f816:3eff:fe90:3ff9
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+attacker_0:
+  hostname: attacker-0
+  groups:
+    - attacker
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.192.242
+  default_ipv6_address: fe80::f816:3eff:fe04:4b63
+  ipv4_addresses:
+    - 172.28.192.242
+  ipv6_addresses:
+    - fe80::f816:3eff:fe04:4b63
+  fqdns: []
+  logs:
+    - path: ait.aecid.attacker.wpdiscuz/sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 200000000
+      add_field:
+        '[@metadata][kyoushi][sm]': attacker
+    - path: ait.aecid.attacker.wpdiscuz/traffic.json
+      type: pcap
+      file_chunk_size: 200000000
+      codec: json
+    - path: dnsteal.log*
+      type: dnsteal
+      codec:
+        json:
+          ecs_compatibility: disabled
+      file_chunk_size: 200000000
+    - path: dnsteal/traffic.json
+      type: pcap
+      file_chunk_size: 20000000
+      codec: json
+  timezone: UTC
+cloud_share:
+  hostname: cloud-share
+  groups:
+    - dmz
+    - proxied
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.237.0.4
+  default_ipv6_address: fe80::f816:3eff:fe32:e800
+  ipv4_addresses:
+    - 10.237.0.4
+  ipv6_addresses:
+    - fe80::f816:3eff:fe32:e800
+  fqdns:
+    - cloud.dmz.mannsmith.harrison.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+monitoring:
+  hostname: monitoring
+  groups:
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.130.229
+  default_ipv6_address: fe80::f816:3eff:fe33:c44a
+  ipv4_addresses:
+    - 192.168.130.229
+  ipv6_addresses:
+    - fe80::f816:3eff:fe33:c44a
+  fqdns:
+    - monitoring.intranet.mannsmith.harrison.com
+  logs:
+    - path: logstash/intranet-server/*system.cpu.log
+      type: metricsbeat
+      codec: json
+      add_field:
+        '[@metadata][host_override]': true
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+intranet_server:
+  hostname: intranet-server
+  groups:
+    - beatservers
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.215
+  default_ipv6_address: fe80::f816:3eff:fee5:d86c
+  ipv4_addresses:
+    - 192.168.131.215
+  ipv6_addresses:
+    - fe80::f816:3eff:fee5:d86c
+  fqdns:
+    - intranet.mannsmith.harrison.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+      add_field:
+        '[@metadata][kyoushi][httpd_dirs]':
+          - /var/www/intranet.mannsmith.harrison.com
+          - ''
+          - /usr/share/javascript
+          - /javascript
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+mail:
+  hostname: mail
+  groups:
+    - dmz
+    - dnat
+    - mailserver
+    - proxied
+    - servers
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.9'
+  default_ipv4_address: 10.237.2.255
+  default_ipv6_address: fe80::f816:3eff:fe7a:67d
+  ipv4_addresses:
+    - 10.237.2.255
+  ipv6_addresses:
+    - fe80::f816:3eff:fe7a:67d
+  fqdns:
+    - mailserver.mannsmith.harrison.com
+    - mail.dmz.mannsmith.harrison.com
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_5:
+  hostname: ext-user-5
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.219
+  default_ipv6_address: fe80::f816:3eff:fe5c:f8e7
+  ipv4_addresses:
+    - 172.28.193.219
+  ipv6_addresses:
+    - fe80::f816:3eff:fe5c:f8e7
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+webserver:
+  hostname: webserver
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.237.0.166
+  default_ipv6_address: fe80::f816:3eff:fe6b:3f5e
+  ipv4_addresses:
+    - 10.237.0.166
+  ipv6_addresses:
+    - fe80::f816:3eff:fe6b:3f5e
+  fqdns:
+    - proxy.mannsmith.harrison.com
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+ext_user_0:
+  hostname: ext-user-0
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.193.242
+  default_ipv6_address: fe80::f816:3eff:fe6d:1466
+  ipv4_addresses:
+    - 172.28.193.242
+  ipv6_addresses:
+    - fe80::f816:3eff:fe6d:1466
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+inet-dns:
+  hostname: inet-dns
+  groups:
+    - dnsservers
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.28.255.254
+  default_ipv6_address: fe80::f816:3eff:fe55:5463
+  ipv4_addresses:
+    - 172.28.255.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fe55:5463
+  fqdns:
+    - dns.harrison.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+  timezone: UTC
+inet-firewall:
+  hostname: inet-firewall
+  groups:
+    - dnsservers
+    - firewall
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.128.1
+  default_ipv6_address: fe80::f816:3eff:fe51:a73b
+  ipv4_addresses:
+    - 192.168.128.1
+    - 10.237.0.1
+    - 172.28.192.4
+  ipv6_addresses:
+    - fe80::f816:3eff:fe51:a73b
+    - fe80::f816:3eff:fe46:b3c2
+    - fe80::f816:3eff:fe74:bd99
+  fqdns:
+    - gateway.mannsmith.harrison.com
+    - mannsmith.harrison.com
+    - gateway.dmz.mannsmith.harrison.com
+    - gateway.intranet.mannsmith.harrison.com
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+

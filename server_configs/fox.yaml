@@ -1,0 +1,836 @@
+internal_share:
+  hostname: internal-share
+  groups:
+    - beatservers
+    - intranet
+    - servers
+    - share
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.33.111
+  default_ipv6_address: fe80::f816:3eff:fe09:3ac9
+  ipv4_addresses:
+    - 10.35.33.111
+  ipv6_addresses:
+    - fe80::f816:3eff:fe09:3ac9
+  fqdns:
+    - share.intranet.price.fox.org
+  logs:
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+remote_employee_1:
+  hostname: remote-employee-1
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: jwright
+  openvpn_user: jwright
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.128.107
+  default_ipv6_address: fe80::f816:3eff:fe2f:2ec7
+  ipv4_addresses:
+    - 192.168.128.107
+  ipv6_addresses:
+    - fe80::f816:3eff:fe2f:2ec7
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_0:
+  hostname: remote-employee-0
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: dmorgan
+  openvpn_user: dmorgan
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.130.84
+  default_ipv6_address: fe80::f816:3eff:fe52:4906
+  ipv4_addresses:
+    - 192.168.130.84
+  ipv6_addresses:
+    - fe80::f816:3eff:fe52:4906
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_2:
+  hostname: remote-employee-2
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: hwarren
+  openvpn_user: hwarren
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.129.254
+  default_ipv6_address: fe80::f816:3eff:fee2:a5a2
+  ipv4_addresses:
+    - 192.168.129.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fee2:a5a2
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+remote_employee_3:
+  hostname: remote-employee-3
+  groups:
+    - employee
+    - internet
+    - remote_employee
+  username: bpotter
+  openvpn_user: bpotter
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.128.152
+  default_ipv6_address: fe80::f816:3eff:fee4:36cf
+  ipv4_addresses:
+    - 192.168.128.152
+  ipv6_addresses:
+    - fe80::f816:3eff:fee4:36cf
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+jonesmorgan_mail:
+  hostname: jonesmorgan-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.128.170
+  default_ipv6_address: fe80::f816:3eff:fec2:ebe9
+  ipv4_addresses:
+    - 192.168.128.170
+  ipv6_addresses:
+    - fe80::f816:3eff:fec2:ebe9
+  fqdns:
+    - smtp.jonesmorgan.fox.org
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+ext_user_5:
+  hostname: ext-user-5
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.165
+  default_ipv6_address: fe80::f816:3eff:fec2:e2fc
+  ipv4_addresses:
+    - 192.168.131.165
+  ipv6_addresses:
+    - fe80::f816:3eff:fec2:e2fc
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+taylorcruz_mail:
+  hostname: taylorcruz-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.128.195
+  default_ipv6_address: fe80::f816:3eff:fe08:1dc2
+  ipv4_addresses:
+    - 192.168.128.195
+  ipv6_addresses:
+    - fe80::f816:3eff:fe08:1dc2
+  fqdns:
+    - mailserver.taylorcruz.fox.org
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+ext_user_0:
+  hostname: ext-user-0
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.118
+  default_ipv6_address: fe80::f816:3eff:fe52:947
+  ipv4_addresses:
+    - 192.168.131.118
+  ipv6_addresses:
+    - fe80::f816:3eff:fe52:947
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+miller_mail:
+  hostname: miller-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.129.212
+  default_ipv6_address: fe80::f816:3eff:fe14:64da
+  ipv4_addresses:
+    - 192.168.129.212
+  ipv6_addresses:
+    - fe80::f816:3eff:fe14:64da
+  fqdns:
+    - mail.miller.fox.org
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+ext_user_3:
+  hostname: ext-user-3
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.234
+  default_ipv6_address: fe80::f816:3eff:fe46:7110
+  ipv4_addresses:
+    - 192.168.131.234
+  ipv6_addresses:
+    - fe80::f816:3eff:fe46:7110
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_6:
+  hostname: ext-user-6
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.156
+  default_ipv6_address: fe80::f816:3eff:fe1c:f87b
+  ipv4_addresses:
+    - 192.168.131.156
+  ipv6_addresses:
+    - fe80::f816:3eff:fe1c:f87b
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+whittaker_mail:
+  hostname: whittaker-mail
+  groups:
+    - ext_mail
+    - internet
+    - mailserver
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 192.168.131.228
+  default_ipv6_address: fe80::f816:3eff:fe1e:9777
+  ipv4_addresses:
+    - 192.168.131.228
+  ipv6_addresses:
+    - fe80::f816:3eff:fe1e:9777
+  fqdns:
+    - mailserver.whittaker.fox.org
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+  timezone: UTC
+ext_user_4:
+  hostname: ext-user-4
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.131.15
+  default_ipv6_address: fe80::f816:3eff:fef4:ce54
+  ipv4_addresses:
+    - 192.168.131.15
+  ipv6_addresses:
+    - fe80::f816:3eff:fef4:ce54
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_1:
+  hostname: ext-user-1
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.129.209
+  default_ipv6_address: fe80::f816:3eff:fedd:51e4
+  ipv4_addresses:
+    - 192.168.129.209
+  ipv6_addresses:
+    - fe80::f816:3eff:fedd:51e4
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+ext_user_2:
+  hostname: ext-user-2
+  groups:
+    - ext_user
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.130.110
+  default_ipv6_address: fe80::f816:3eff:fe32:8989
+  ipv4_addresses:
+    - 192.168.130.110
+  ipv6_addresses:
+    - fe80::f816:3eff:fe32:8989
+  fqdns: []
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_4:
+  hostname: internal-employee-4
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: cnoble
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.33.116
+  default_ipv6_address: fe80::f816:3eff:febf:d717
+  ipv4_addresses:
+    - 10.35.33.116
+  ipv6_addresses:
+    - fe80::f816:3eff:febf:d717
+  fqdns:
+    - employee04.intranet.price.fox.org
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+mail:
+  hostname: mail
+  groups:
+    - dmz
+    - dnat
+    - mailserver
+    - proxied
+    - servers
+  distribution: Debian
+  distribution_release: stretch
+  distribution_version: '9.11'
+  default_ipv4_address: 172.17.131.81
+  default_ipv6_address: fe80::f816:3eff:fedb:adbe
+  ipv4_addresses:
+    - 172.17.131.81
+  ipv6_addresses:
+    - fe80::f816:3eff:fedb:adbe
+  fqdns:
+    - mailserver.price.fox.org
+    - mail.dmz.price.fox.org
+  logs:
+    - path: horde/*access.log*
+      type: apache_access
+    - path: horde/*error.log*
+      type: apache_error
+    - path: mail.err*
+      type: syslog
+    - path: mail.info*
+      type: syslog
+    - path: mail.log*
+      type: syslog
+    - path: mail.warn*
+      type: syslog
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+vpn:
+  hostname: vpn
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.17.130.196
+  default_ipv6_address: fe80::f816:3eff:fef8:6507
+  ipv4_addresses:
+    - 172.17.130.196
+  ipv6_addresses:
+    - fe80::f816:3eff:fef8:6507
+  fqdns:
+    - vpn.price.fox.org
+    - vpn.dmz.price.fox.org
+  logs:
+    - path: openvpn.log*
+      type: openvpn
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+webserver:
+  hostname: webserver
+  groups:
+    - dmz
+    - dnat
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.17.130.37
+  default_ipv6_address: fe80::f816:3eff:fee8:c0c7
+  ipv4_addresses:
+    - 172.17.130.37
+  ipv6_addresses:
+    - fe80::f816:3eff:fee8:c0c7
+  fqdns:
+    - proxy.price.fox.org
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_0:
+  hostname: internal-employee-0
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: mmorris
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.32.164
+  default_ipv6_address: fe80::f816:3eff:fe9f:bfcc
+  ipv4_addresses:
+    - 10.35.32.164
+  ipv6_addresses:
+    - fe80::f816:3eff:fe9f:bfcc
+  fqdns:
+    - employee00.intranet.price.fox.org
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+internal_employee_2:
+  hostname: internal-employee-2
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: mdavis
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.35.118
+  default_ipv6_address: fe80::f816:3eff:fe4e:2d0b
+  ipv4_addresses:
+    - 10.35.35.118
+  ipv6_addresses:
+    - fe80::f816:3eff:fe4e:2d0b
+  fqdns:
+    - employee02.intranet.price.fox.org
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+cloud_share:
+  hostname: cloud-share
+  groups:
+    - dmz
+    - proxied
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 172.17.129.140
+  default_ipv6_address: fe80::f816:3eff:fe06:848c
+  ipv4_addresses:
+    - 172.17.129.140
+  ipv6_addresses:
+    - fe80::f816:3eff:fe06:848c
+  fqdns:
+    - cloud.dmz.price.fox.org
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_3:
+  hostname: internal-employee-3
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: phopkins
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.35.202
+  default_ipv6_address: fe80::f816:3eff:fe98:61fb
+  ipv4_addresses:
+    - 10.35.35.202
+  ipv6_addresses:
+    - fe80::f816:3eff:fe98:61fb
+  fqdns:
+    - employee03.intranet.price.fox.org
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+monitoring:
+  hostname: monitoring
+  groups:
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.35.204
+  default_ipv6_address: fe80::f816:3eff:fe08:8dbc
+  ipv4_addresses:
+    - 10.35.35.204
+  ipv6_addresses:
+    - fe80::f816:3eff:fe08:8dbc
+  fqdns:
+    - monitoring.intranet.price.fox.org
+  logs:
+    - path: logstash/intranet-server/*system.cpu.log
+      type: metricsbeat
+      codec: json
+      add_field:
+        '[@metadata][host_override]': true
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+internal_employee_1:
+  hostname: internal-employee-1
+  groups:
+    - employee
+    - internal_employee
+    - intranet
+  username: sthornton
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.33.144
+  default_ipv6_address: fe80::f816:3eff:fe97:667e
+  ipv4_addresses:
+    - 10.35.33.144
+  ipv6_addresses:
+    - fe80::f816:3eff:fe97:667e
+  fqdns:
+    - employee01.intranet.price.fox.org
+  logs:
+    - path: sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 320000
+      add_field:
+        '[@metadata][kyoushi][sm]': user
+  timezone: UTC
+intranet_server:
+  hostname: intranet-server
+  groups:
+    - beatservers
+    - intranet
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.35.206
+  default_ipv6_address: fe80::f816:3eff:fee2:3276
+  ipv4_addresses:
+    - 10.35.35.206
+  ipv6_addresses:
+    - fe80::f816:3eff:fee2:3276
+  fqdns:
+    - intranet.price.fox.org
+  logs:
+    - path: apache2/*access*.log*
+      type: apache_access
+    - path: apache2/*error*.log*
+      type: apache_error
+      add_field:
+        '[@metadata][kyoushi][httpd_dirs]':
+          - /var/www/intranet.price.fox.org
+          - ''
+          - /usr/share/javascript
+          - /javascript
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+attacker_0:
+  hostname: attacker-0
+  groups:
+    - attacker
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.130.77
+  default_ipv6_address: fe80::f816:3eff:fe8e:cbcb
+  ipv4_addresses:
+    - 192.168.130.77
+  ipv6_addresses:
+    - fe80::f816:3eff:fe8e:cbcb
+  fqdns: []
+  logs:
+    - path: ait.aecid.attacker.wpdiscuz/sm.log*
+      type: kyoushi
+      codec: json
+      file_chunk_size: 200000000
+      add_field:
+        '[@metadata][kyoushi][sm]': attacker
+    - path: ait.aecid.attacker.wpdiscuz/traffic.json
+      type: pcap
+      file_chunk_size: 200000000
+      codec: json
+    - path: dnsteal.log*
+      type: dnsteal
+      codec:
+        json:
+          ecs_compatibility: disabled
+      file_chunk_size: 200000000
+    - path: dnsteal/traffic.json
+      type: pcap
+      file_chunk_size: 20000000
+      codec: json
+  timezone: UTC
+inet-firewall:
+  hostname: inet-firewall
+  groups:
+    - dnsservers
+    - firewall
+    - servers
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 10.35.32.1
+  default_ipv6_address: fe80::f816:3eff:fe0a:fa83
+  ipv4_addresses:
+    - 10.35.32.1
+    - 192.168.128.4
+    - 172.17.128.1
+  ipv6_addresses:
+    - fe80::f816:3eff:fe0a:fa83
+    - fe80::f816:3eff:fe1d:259e
+    - fe80::f816:3eff:fec3:c5bf
+  fqdns:
+    - gateway.price.fox.org
+    - price.fox.org
+    - gateway.dmz.price.fox.org
+    - gateway.intranet.price.fox.org
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+    - path: audit/audit.log*
+      type: audit
+      add_field:
+        '[@metadata][pipeline]': auditd-logs
+    - path: auth.log*
+      type: auth
+    - path: syslog*
+      type: syslog
+  timezone: UTC
+inet-dns:
+  hostname: inet-dns
+  groups:
+    - dnsservers
+    - internet
+  distribution: Ubuntu
+  distribution_release: bionic
+  distribution_version: '18.04'
+  default_ipv4_address: 192.168.255.254
+  default_ipv6_address: fe80::f816:3eff:fea9:caaa
+  ipv4_addresses:
+    - 192.168.255.254
+  ipv6_addresses:
+    - fe80::f816:3eff:fea9:caaa
+  fqdns:
+    - dns.fox.org
+  logs:
+    - path: dnsmasq.log*
+      type: dnsmasq
+  timezone: UTC
+

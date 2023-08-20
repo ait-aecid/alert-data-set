@@ -1,0 +1,795 @@
+LearnMode: false
+AminerUser: 'aminer'  # optional default: aminer
+AminerGroup: 'aminer' # optional default: aminer
+
+LogResourceList:
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/mail.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/mail.warn'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/user.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/mail.info'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/exim4/mainlog'
+  parser_id: 'EximParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/messages'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/horde/horde-access-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail1/logs/horde/horde-error-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/mail.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/mail.warn'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/user.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/mail.info'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/exim4/mainlog'
+  parser_id: 'EximParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/messages'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/horde/horde-access-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail2/logs/horde/horde-error-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/mail.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/mail.warn'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/user.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/mail.info'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/exim4/mainlog'
+  parser_id: 'EximParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/messages'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/horde/horde-access-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail3/logs/horde/horde-error-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/apache2/access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/cloud_share/logs/apache2/other_vhosts_access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-dns/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-dns/logs/dnsmasq.log'
+  parser_id: 'DnsParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-dns/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/mail.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/mail.warn'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/user.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/mail.info'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/exim4/mainlog'
+  parser_id: 'EximParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/messages'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/horde/horde-access-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail0/logs/horde/horde-error-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/webserver/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/webserver/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/mail-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/cloud-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/cloud-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/proxy-access-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/mail-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/proxy-error-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/webserver/logs/apache2/other_vhosts_access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/apache2/intranet-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/apache2/access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/apache2/other_vhosts_access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/intranet_server/logs/apache2/intranet-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/internal_share/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/internal_share/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/internal_share/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/internal_share/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/internal_share/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/internal_share/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/dnsmasq.log'
+  parser_id: 'DnsParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/inet-firewall/logs/kern.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/mail/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/mail/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/mail.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/mail.warn'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/user.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/mail.info'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/exim4/mainlog'
+  parser_id: 'EximParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/messages'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/horde/horde-access-access.log'
+  parser_id: 'ApacheAccessParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/mail/logs/horde/horde-error-error.log'
+  parser_id: 'ApacheErrorParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/vpn/logs/suricata/fast.log'
+  parser_id: 'SuricataFastParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/vpn/logs/suricata/suricata.log'
+#  parser_id: 'SyslogParsingModel'
+#- url: 'file:///home/ubuntu/replay/fox/vpn/logs/suricata/eve.json'
+#  parser_id: 'SuricataEventParsingModel'
+#  json: True
+- url: 'file:///home/ubuntu/replay/fox/vpn/logs/openvpn.log'
+  parser_id: 'OpenVpnParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/vpn/logs/auth.log'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/vpn/logs/audit/audit.log'
+  parser_id: 'AuditdParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/vpn/logs/syslog'
+  parser_id: 'SyslogParsingModel'
+- url: 'file:///home/ubuntu/replay/fox/monitoring/logs/logstash/intranet-server/system.cpu.log'
+  parser_id: 'MonitoringParsingModel'
+
+Parser:
+  - id: ApacheAccessParsingModel
+    type: ApacheAccessParsingModel
+    name: 'ApacheAccessParsingModel'
+
+  - id: ApacheErrorParsingModel
+    type: ApacheErrorParsingModel
+    name: 'ApacheErrorParsingModel'
+
+  - id: AuditdParsingModel
+    type: AuditdParsingModel
+    name: 'AuditdParsingModel'
+
+  - id: DnsParsingModel
+    type: DnsParsingModel
+    name: 'DnsParsingModel'
+
+  - id: EximParsingModel
+    type: EximParsingModel
+    name: 'EximParsingModel'
+
+  - id: SyslogParsingModel
+    type: SyslogParsingModel
+    name: 'SyslogParsingModel'
+
+  - id: SuricataFastParsingModel
+    type: SuricataFastParsingModel
+    name: 'SuricataFastParsingModel'
+
+  - id: SuricataEventParsingModel
+    type: SuricataEventParsingModel
+    name: 'SuricataEventParsingModel'
+
+  - id: OpenVpnParsingModel
+    type: OpenVpnParsingModel
+    name: 'OpenVpnParsingModel'
+
+  - id: monitoring_timestamp
+    type: DateTimeModelElement
+    name: 'time'
+    date_format: '%Y-%m-%dT%H:%M:%S.%fZ'
+
+  - id: monitoring_int
+    type: DecimalIntegerValueModelElement
+    name: 'val'
+
+  - id: monitoring_val
+    type: DecimalFloatValueModelElement
+    name: 'val'
+
+  - id: monitoring_str
+    type: VariableByteDataModelElement
+    name: 'version'
+    args: 'abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:_-/()[]'
+
+  - id: MonitoringParsingModel
+    type: JsonModelElement
+    name: 'model'
+    key_parser_dict:
+      metricset:
+        period: monitoring_str
+        name: monitoring_str
+      agent:
+        id: monitoring_str
+        hostname: monitoring_str
+        type: monitoring_str
+        ephemeral_id: monitoring_str
+        version: monitoring_str
+        name: monitoring_str
+      tags:
+        -  monitoring_str
+      host:
+        cpu:
+          pct: monitoring_str
+        name: monitoring_str
+      "@version": monitoring_str
+      system:
+        cpu:
+          cores: monitoring_int
+          steal:
+            norm:
+              pct: monitoring_str
+            pct: monitoring_str
+          idle:
+            norm:
+              pct: monitoring_str
+            pct: monitoring_str
+          nice:
+            norm:
+              pct: monitoring_val
+            pct: monitoring_val
+          iowait:
+            norm:
+              pct: monitoring_str
+            pct: monitoring_str
+          user:
+            norm:
+              pct: monitoring_str
+            pct: monitoring_str
+          total:
+            norm:
+              pct: monitoring_val
+            pct: monitoring_val
+          irq:
+            norm:
+              pct: monitoring_str
+            pct: monitoring_str
+          system:
+            norm:
+              pct: monitoring_val
+            pct: monitoring_val
+          softirq:
+            norm:
+              pct: monitoring_str
+            pct: monitoring_str
+      "@timestamp": monitoring_timestamp
+      service:
+        type: monitoring_str
+      event:
+        module: monitoring_str
+        duration: monitoring_str
+        dataset: monitoring_str
+      ecs:
+        version: monitoring_str
+
+  - id: model
+    start: True
+    type: FirstMatchModelElement
+    name: 'model'
+    args:
+      - ApacheAccessParsingModel
+      - ApacheErrorParsingModel
+      - AuditdParsingModel
+      - DnsParsingModel
+      - EximParsingModel
+      - SyslogParsingModel
+      - SuricataFastParsingModel
+      - SuricataEventParsingModel
+      - OpenVpnParsingModel
+      - MonitoringParsingModel
+
+Input:
+        multi_source: True # optional
+        sync_wait_time: 1
+        timestamp_paths: 
+          - "/model/time"
+          - "/model/@timestamp/time"
+          - "/model/with_data/time"
+          - "/model/type/execve/time"
+          - "/model/type/proctitle/time"
+          - "/model/type/syscall/time"
+          - "/model/type/path/time"
+          - "/model/type/login/time"
+          - "/model/type/sockaddr/time"
+          - "/model/type/unknown/time"
+          - "/model/type/cred_refr/time"
+          - "/model/type/user_start/time"
+          - "/model/type/user_acct/time"
+          - "/model/type/user_auth/time"
+          - "/model/type/user_login/time"
+          - "/model/type/cred_disp/time"
+          - "/model/type/service_start/time"
+          - "/model/type/service_stop/time"
+          - "/model/type/user_end/time"
+          - "/model/type/user_cmd/time"
+          - "/model/type/cred_acq/time"
+          - "/model/type/avc/time"
+          - "/model/type/user_bprm_fcaps/time"
+          - "/model/datetime"
+
+Analysis:
+        - type: ParserCount
+          paths:
+            - "/model"
+            - "/model/client_id" # Apache Access
+            - "/model/with_data" # Apache Error
+            - "/model/type_str" # Audit
+            - "/model/br_open" # Dns
+            - "/model/sp" # Exim
+            - "/model/colon" # OpenVPN
+            - "/model/host" # Syslog
+            - "/model/@timestamp/time" # Monitoring
+          report_interval: 5
+          output_event_handlers: ["stpe"]
+
+        # General
+        - type: "VerboseUnparsedAtomHandler"
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathDetector"
+          id: "AMiner: New event type."
+          persistence_id: 'nmpd'
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        # Apache Access
+        - type: "NewMatchPathValueDetector"
+          id: "AMiner: New status code in Apache Access log."
+          paths: ["/model/status_code"]
+          persistence_id: 'nmpvd_status_code'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueDetector"
+          id: "AMiner: New request method in Apache Access log."
+          paths: ["/model/fm/request/method"]
+          persistence_id: 'nmpvd_request_method'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EntropyDetector"
+          id: "AMiner: High entropy in Apache Access request."
+          paths: ["/model/fm/request/request"]
+          persistence_id: entropy_request
+          prob_thresh: 0.05
+          default_freqs: false
+          skip_repetitions: false
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "CharsetDetector"
+          id: "AMiner: New characters in Apache Access request."
+          paths: ["/model/fm/request/request"]
+          persistence_id: charset_request
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EntropyDetector"
+          id: "AMiner: High entropy in Apache Access referer."
+          paths: ["/model/combined/combined/referer"]
+          persistence_id: entropy_referer
+          prob_thresh: 0.05
+          default_freqs: false
+          skip_repetitions: false
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "CharsetDetector"
+          id: "AMiner: New characters in Apache Access referer."
+          paths: ["/model/combined/combined/referer"]
+          persistence_id: charset_referer
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EntropyDetector"
+          id: "AMiner: High entropy in Apache Access user agent."
+          paths: ["/model/combined/combined/user_agent"]
+          persistence_id: entropy_agent
+          prob_thresh: 0.05
+          default_freqs: false
+          skip_repetitions: true
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EventCountClusterDetector"
+          id: "AMiner: Unusual occurrence frequencies of Apache Access request methods."
+          paths:
+            - "/model/fm/request/method"
+          window_size: 600
+          confidence_factor: 0.5
+          persistence_id: eccd_request_method
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EventFrequencyDetector"
+          id: "AMiner: Unusual occurrence frequencies of Apache Access logs."
+          persistence_id: "efd_access"
+          paths:
+            - "/model/client_id"
+          window_size: 3600
+          num_windows: 300
+          confidence_factor: 0.2
+          season: 86400
+          stop_learning_time: 172800
+          learn_mode: true
+          empty_window_warnings: False
+          output_event_handlers: ["stpe_file"]
+
+        # Audit
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New syscall parameter combination in Audit logs."
+          paths: ['/model/type/syscall/syscall', '/model/type/syscall/uid', '/model/type/syscall/comm', '/model/type/syscall/exe']
+          persistence_id: 'nmpvcd_syscall'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New service_start parameter combination in Audit logs."
+          paths: ['/model/type/service_start/uid', '/model/type/service_start/msg2', '/model/type/service_start/fm/comm/comm', '/model/type/service_start/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_service_start'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New service_stop parameter combination in Audit logs."
+          paths: ['/model/type/service_stop/uid', '/model/type/service_stop/msg2', '/model/type/service_stop/fm/comm/comm', '/model/type/service_stop/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_service_stop'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New login parameter combination in Audit logs."
+          paths: ['/model/type/login/uid', '/model/type/login/auid']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_login'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New cred_refr parameter combination in Audit logs."
+          paths: ['/model/type/cred_refr/uid', '/model/type/cred_refr/msg2', '/model/type/cred_refr/fm/acct/acct', '/model/type/cred_refr/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_cred_refr'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New user_start parameter combination in Audit logs."
+          paths: ['/model/type/user_start/uid', '/model/type/user_start/msg2', '/model/type/user_start/fm/acct/acct', '/model/type/user_start/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_user_start'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New user_acct parameter combination in Audit logs."
+          paths: ['/model/type/user_acct/uid', '/model/type/user_acct/msg2', '/model/type/user_acct/fm/acct/acct', '/model/type/user_acct/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_user_acct'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New user_auth parameter combination in Audit logs."
+          paths: ['/model/type/user_auth/uid', '/model/type/user_auth/msg2', '/model/type/user_auth/fm/acct/acct', '/model/type/user_auth/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_user_auth'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New user_login parameter combination in Audit logs."
+          paths: ['/model/type/user_login/uid', '/model/type/user_login/msg2', '/model/type/user_login/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_user_login'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New cred_disp parameter combination in Audit logs."
+          paths: ['/model/type/cred_disp/uid', '/model/type/cred_disp/msg2', '/model/type/cred_disp/fm/acct/acct', '/model/type/cred_disp/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_cred_disp'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New user_end parameter combination in Audit logs."
+          paths: ['/model/type/user_end/uid', '/model/type/user_end/msg2', '/model/type/user_end/fm/acct/acct', '/model/type/user_end/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_user_end'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New user_cmd parameter combination in Audit logs."
+          paths: ['/model/type/user_cmd/uid']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_user_cmd'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New cred_acq parameter combination in Audit logs."
+          paths: ['/model/type/cred_acq/uid', '/model/type/cred_acq/msg2', '/model/type/cred_acq/fm/acct/acct', '/model/type/cred_acq/opt/opt_seq/exe']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_cred_acq'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New apparmor parameter combination in Audit logs."
+          paths: ['/model/type/avc/apparmor', '/model/type/avc/operation']
+          allow_missing_values: true
+          persistence_id: 'nmpvcd_avc'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        # DNS        
+        - type: "NewMatchPathValueDetector"
+          id: "AMiner: New ip address in DNS logs."
+          paths: ['/model/type/query/ip', '/model/type/forwarded/ip', '/model/type/nameserver/ip',]
+          persistence_id: 'nmpvd_dns_ip'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "NewMatchPathValueComboDetector"
+          id: "AMiner: New query record in DNS logs."
+          paths: ['/model/type/query/record']
+          persistence_id: 'nmpvcd_dns_record'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "CharsetDetector"
+          id: "AMiner: New characters in DNS domain."
+          paths: ["/model/type/query/domain", "/model/type/reply/domain", "/model/type/forwarded/domain"]
+          persistence_id: charset_dns_domain
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EntropyDetector"
+          id: "AMiner: High entropy in DNS domain."
+          paths: ["/model/type/query/domain", "/model/type/reply/domain", "/model/type/forwarded/domain"]
+          persistence_id: entropy_dns_domain
+          prob_thresh: 0.015
+          default_freqs: false
+          skip_repetitions: false
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EventFrequencyDetector"
+          id: "AMiner: Unusual occurrence frequencies of query records in DNS logs."
+          paths: ['/model/type/query/record']
+          window_size: 3600
+          num_windows: 300
+          confidence_factor: 0.25
+          season: 86400
+          persistence_id: 'efd_dns_record'
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          early_exceeding_anomaly_output: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EventCountClusterDetector"
+          id: "AMiner: Unusual occurrence frequencies of DNS log events."
+          constraint_list:
+            - "/model/br_open"
+          window_size: 600
+          confidence_factor: 0.5
+          persistence_id: eccd_dns
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EventCountClusterDetector"
+          id: "AMiner: Unusual occurrence frequencies of DNS query IPs."
+          paths: ['/model/type/query/ip']
+          window_size: 3600
+          confidence_factor: 0.5
+          persistence_id: eccd_query_ip
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: "EventCountClusterDetector"
+          id: "AMiner: Unusual occurrence frequencies of DNS query records."
+          paths: ['/model/type/query/record']
+          window_size: 3600
+          confidence_factor: 0.3
+          norm: true
+          persistence_id: eccd_dns_record
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        # Monitoring
+        - type: "ValueRangeDetector"
+          id: "AMiner: CPU value out of expected range in monitoring logs."
+          paths:
+            - "/model/system/cpu/total/norm/val"
+          persistence_id: range_cpu
+          output_logline: false
+          stop_learning_time: 172800
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+        - type: MatchValueAverageChangeDetector
+          id: "AMiner: CPU value deviates from average in monitoring logs."
+          timestamp_path: "/model/time"
+          paths:
+            - "/model/system/cpu/total/norm/val"
+          min_bin_elements: 100
+          min_bin_time: 10
+          avg_factor: 3
+          var_factor: 2
+          stop_learning_time: 172800
+          output_logline: false
+          learn_mode: true
+          output_event_handlers: ["stpe_file"]
+
+EventHandlers:
+        - id: "stpe"
+          json: true # optional default: false
+          type: "StreamPrinterEventHandler"
+
+        - id: "stpe_file"
+          json: true
+          type: "StreamPrinterEventHandler"
+          pretty: false
+          output_file_path: '/tmp/aminer_out.log'
+
