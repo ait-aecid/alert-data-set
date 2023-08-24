@@ -14,8 +14,8 @@ ubuntu@ubuntu:~$ cd aitldsv2/
 ubuntu@ubuntu:~/aitldsv2$ wget https://zenodo.org/record/5789064/files/fox.zip
 ubuntu@ubuntu:~/aitldsv2$ unzip fox.zip -d fox
 ubuntu@ubuntu:~/aitldsv2$ cd ..
-ubuntu@ubuntu:~$ git clone https://github.com/ait-aecid/alert-data-set.git
 ubuntu@ubuntu:~$ systemctl restart wazuh-agent.service
+ubuntu@ubuntu:~$ git clone https://github.com/ait-aecid/alert-data-set.git
 ubuntu@ubuntu:~$ cd alert-data-set/
 ubuntu@ubuntu:~/alert-data-set$ vim replay_logs.py
 ubuntu@ubuntu:~/alert-data-set$ python3 replay_logs.py
