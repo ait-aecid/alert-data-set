@@ -21,7 +21,7 @@ ubuntu@ubuntu:~/alert-data-set$ vim replay_logs.py
 ubuntu@ubuntu:~/alert-data-set$ python3 replay_logs.py
 ```
 
-Once the script has finished, collect the alerts from Wazuh Manager. Note that the alerts stored in the elastic database also contain alerts from Suricata. The reason for this is that Suricata was already deployed when running the simulation of the AIT-LDSv2; conveniently, Wazuh collects these alerts and stores them together with the alerts triggered by its own rules in the database. One possibility to copy the alerts from the database to a local file is elasticdump:
+Once the script has finished, collect the alerts from Wazuh Manager. Note that the alerts stored in the elastic database also contain alerts from Suricata. The reason for this is that Suricata was already deployed when running the simulation of the AIT-LDSv2; conveniently, Wazuh collects these alerts and stores them together with the alerts triggered by its own rules in the database. One possibility to copy the alerts from the database to a local file is [elasticdump](https://github.com/elasticsearch-dump/elasticsearch-dump):
 
 ```
 ubuntu@ubuntu:~$ export NODE_TLS_REJECT_UNAUTHORIZED=0
