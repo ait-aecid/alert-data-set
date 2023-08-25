@@ -76,5 +76,5 @@ time,name,ip,host,short
 
 If you use the AIT-ADS, please cite the following publications:
 
-* Landauer, M., Skopik, F., & Wurzenberger, M.: Introducing a New Alert Data Set for Multi-Step Attack Analysis. [arXiv:2308.12627](https://arxiv.org/abs/2308.12627) \[[PDF](https://arxiv.org/pdf/2308.12627.pdf)\]
+* Landauer, M., Skopik, F., Wurzenberger, M.: Introducing a New Alert Data Set for Multi-Step Attack Analysis. [arXiv:2308.12627](https://arxiv.org/abs/2308.12627) \[[PDF](https://arxiv.org/pdf/2308.12627.pdf)\]
 * Landauer M., Skopik F., Frank M., Hotwagner W., Wurzenberger M., Rauber A. (2023): [Maintainable Log Datasets for Evaluation of Intrusion Detection Systems.](https://ieeexplore.ieee.org/abstract/document/9866880) IEEE Transactions on Dependable and Secure Computing, vol. 20, no. 4, pp. 3466-3482. \[[PDF](https://arxiv.org/pdf/2203.08580.pdf)\]
