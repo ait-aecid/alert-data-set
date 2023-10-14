@@ -46,6 +46,7 @@ Create a directory in this repository and download the AIT-ADS as follows.
 
 ```
 ubuntu@ubuntu:~/alert-data-set$ mkdir alerts_raw
+ubuntu@ubuntu:~/alert-data-set$ cd alerts_raw
 ubuntu@ubuntu:~/alert-data-set/alerts_raw$ wget https://zenodo.org/record/8263181/files/ait_ads.zip
 ubuntu@ubuntu:~/alert-data-set/alerts_raw$ unzip ait_ads.zip
 ubuntu@ubuntu:~/alert-data-set/alerts_raw$ cd ..
