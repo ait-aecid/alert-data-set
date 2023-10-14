@@ -74,6 +74,54 @@ time,name,ip,host,short
 1642724061,Wazuh: First time this IDS alert is generated.,10.143.0.103,internal_share,W-All-Ids
 ```
 
+## Aggregation
+
+Aggregation of alerts into meta-alerts is achieved with the [aecid-alert-aggregation](https://github.com/ait-aecid/aecid-alert-aggregation) tool. In this repository we provide the `attacktimes.py` and `aggregate_config.py`, which need to be used with the aecid-alert-aggregation to process the AIT-ADS. Moreover, to only aggregate relevant alerts, we provide a script `filter.py` that removes noise alerts based on the aforementioned alert prioritization and removes false positives by only selecting alerts that occur during attack phases. Run the following commands to generate meta-alerts with the aecid-alert-aggregation tool..
+
+```
+ubuntu@ubuntu:~/alert-data-set$ mkdir alerts_filtered
+ubuntu@ubuntu:~/alert-data-set$ python3 filter.py
+ubuntu@ubuntu:~/alert-data-set$ git clone https://github.com/ait-aecid/aecid-alert-aggregation.git
+ubuntu@ubuntu:~/alert-data-set$ cp attacktimes.py aecid-alert-aggregation/
+ubuntu@ubuntu:~/alert-data-set$ cp aggregate_config.py aecid-alert-aggregation/
+ubuntu@ubuntu:~/alert-data-set$ cd aecid-alert-aggregation/
+ubuntu@ubuntu:~/alert-data-set/aecid-alert-aggregation$ python3 aggregate.py
+delta = 2: 18 groups in ['../alerts_filtered/fox_aminer.json', '../alerts_filtered/fox_wazuh.json']
+delta = 2: 24 groups in ['../alerts_filtered/harrison_aminer.json', '../alerts_filtered/harrison_wazuh.json']
+delta = 2: 18 groups in ['../alerts_filtered/russellmitchell_aminer.json', '../alerts_filtered/russellmitchell_wazuh.json']
+delta = 2: 19 groups in ['../alerts_filtered/santos_aminer.json', '../alerts_filtered/santos_wazuh.json']
+delta = 2: 17 groups in ['../alerts_filtered/shaw_aminer.json', '../alerts_filtered/shaw_wazuh.json']
+delta = 2: 17 groups in ['../alerts_filtered/wardbeck_aminer.json', '../alerts_filtered/wardbeck_wazuh.json']
+delta = 2: 15 groups in ['../alerts_filtered/wheeler_aminer.json', '../alerts_filtered/wheeler_wazuh.json']
+delta = 2: 22 groups in ['../alerts_filtered/wilson_aminer.json', '../alerts_filtered/wilson_wazuh.json']
+Now processing file 1/8...
+ Processing groups with delta = 2
+  Processed group 1/18 from {'service_stop'} phase with 2 alerts. New meta-alert 0 generated. (sim=-1.0)
+  Processed group 2/18 from {'service_scans'} phase with 39 alerts. New meta-alert 1 generated. (sim=0.0)
+  Processed group 3/18 from {'service_scans'} phase with 22 alerts. New meta-alert 2 generated. (sim=0.0)
+  Processed group 4/18 from {'service_scans'} phase with 154 alerts. New meta-alert 3 generated. (sim=0.0)
+  Processed group 5/18 from {'service_scans'} phase with 24 alerts. New meta-alert 4 generated. (sim=0.0)
+  Processed group 6/18 from {'wpscan'} phase with 28 alerts. New meta-alert 5 generated. (sim=0.21)
+  Processed group 7/18 from {'wpscan'} phase with 5 alerts. New meta-alert 6 generated. (sim=0.0)
+  Processed group 8/18 from {'wpscan'} phase with 9482 alerts. New meta-alert 7 generated. (sim=0.21)
+  Processed group 9/18 from {'dirb'} phase with 410333 alerts. New meta-alert 8 generated. (sim=0.11)
+  Processed group 10/18 from {'webshell'} phase with 1 alerts. New meta-alert 9 generated. (sim=0.0)
+  Processed group 11/18 from {'webshell'} phase with 1 alerts. Add group to meta-alert 9 (sim=0.71) representing {'webshell'}
+  Processed group 12/18 from {'cracking'} phase with 1 alerts. Add group to meta-alert 9 (sim=0.71) representing {'webshell', 'cracking'}
+  Processed group 13/18 from {'cracking'} phase with 1 alerts. New meta-alert 10 generated. (sim=0.0)
+  Processed group 14/18 from {'cracking'} phase with 1 alerts. New meta-alert 11 generated. (sim=0.0)
+  Processed group 15/18 from {'reverse_shell'} phase with 1 alerts. Add group to meta-alert 9 (sim=0.71) representing {'webshell', 'cracking', 'reverse_shell'}
+  Processed group 16/18 from {'privilege_escalation'} phase with 10 alerts. New meta-alert 12 generated. (sim=0.05)
+  Processed group 17/18 from {'privilege_escalation'} phase with 4 alerts. New meta-alert 13 generated. (sim=0.0)
+  Processed group 18/18 from {'privilege_escalation'} phase with 3 alerts. Add group to meta-alert 13 (sim=0.7) representing {'privilege_escalation'}
+...
+
+Results:
+ delta = 2: 42 meta-alerts generated
+
+Meta-alerts are stored in data/out/aggregate/meta_alerts.txt
+```
+
 If you use the AIT-ADS, please cite the following publications:
 
 * Landauer, M., Skopik, F., Wurzenberger, M.: Introducing a New Alert Data Set for Multi-Step Attack Analysis. [arXiv:2308.12627](https://arxiv.org/abs/2308.12627) \[[PDF](https://arxiv.org/pdf/2308.12627.pdf)\]
