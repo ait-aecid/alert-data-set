@@ -42,6 +42,8 @@ Proceed in the same way with all other scenarios.
 
 ## Analysis
 
+### Download the AIT-ADS
+
 Create a directory in this repository and download the AIT-ADS as follows.
 
 ```
@@ -52,7 +54,9 @@ ubuntu@ubuntu:~/alert-data-set/alerts_raw$ unzip ait_ads.zip
 ubuntu@ubuntu:~/alert-data-set/alerts_raw$ cd ..
 ```
 
-Then, run the following script to analyze the data. This will (i) apply prioritization and output a (latex-formatted) table for all detectors, and (ii) create csv files for alert occurrences in the `alerts_csv` directory for further analysis.
+### Alert prioritization
+
+Run the following script to analyze the data. This will (i) apply prioritization and output a (latex-formatted) table for all detectors, and (ii) create csv files for alert occurrences in the `alerts_csv` directory for further analysis.
 
 ```
 ubuntu@ubuntu:~/alert-data-set$ python3 analyze.py
@@ -75,7 +79,7 @@ time,name,ip,host,short
 1642724061,Wazuh: First time this IDS alert is generated.,10.143.0.103,internal_share,W-All-Ids
 ```
 
-## Aggregation
+### Alert aggregation
 
 Aggregation of alerts into meta-alerts is achieved with the [aecid-alert-aggregation](https://github.com/ait-aecid/aecid-alert-aggregation) tool. In this repository we provide the `attacktimes.py` and `aggregate_config.py`, which need to be used with the aecid-alert-aggregation to process the AIT-ADS. Moreover, to only aggregate relevant alerts, we provide a script `filter.py` that removes noise alerts based on the aforementioned alert prioritization and removes false positives by only selecting alerts that occur during attack phases. Run the following commands to generate meta-alerts with the aecid-alert-aggregation tool..
 
