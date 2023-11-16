@@ -56,7 +56,7 @@ ubuntu@ubuntu:~/alert-data-set/alerts_raw$ cd ..
 
 ### Alert prioritization
 
-Run the following script to analyze the data. This will (i) apply prioritization and output a (latex-formatted) table for all detectors, and (ii) create csv files for alert occurrences in the `alerts_csv` directory for further analysis.
+Run the following script to analyze the data. This will (i) apply prioritization and output a (latex-formatted) table for all detectors, and (ii) create csv files for alert occurrences in the `alerts_csv` directory for further analysis. The csv files will contain labels based on time intervals (`time_label`) and individual events (`event_label`), however, the latter requires that the AIT-LDSv2 and AIT-NDS are available at the paths specified in `analyze.py` and that `do_event_labeling` is set to True. 
 
 ```
 ubuntu@ubuntu:~/alert-data-set$ python3 analyze.py
@@ -67,16 +67,16 @@ W-All-Mul3 &   & 5 & 8 & 8 &   &   &   &   &   &   &   & 1.0 & 1.0 \\ \hline
 W-Acc-Sus &   &   & 6 & 8 &   &   &   &   &   &   &   & 1.0 & 1.0 \\ \hline
 ...
 ubuntu@ubuntu:~/alert-data-set$ head alerts_csv/russellmitchell_alerts.txt
-time,name,ip,host,short
-1642723347,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav
-1642723352,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav
-1642723357,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav
-1642723362,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav
-1642723367,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav
-1642723368,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav
-1642723432,Wazuh: ClamAV database update,192.168.231.56,davey_mail,W-Sys-Cav
-1642724061,Suricata: Alert - ET POLICY GNU/Linux APT User-Agent Outbound likely related to package management,10.143.0.103,internal_share,S-Flw-Apt
-1642724061,Wazuh: First time this IDS alert is generated.,10.143.0.103,internal_share,W-All-Ids
+time,name,ip,host,short,time_label,event_label
+1642723347,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav,false_positive,-
+1642723352,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav,false_positive,-
+1642723357,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav,false_positive,-
+1642723362,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav,false_positive,-
+1642723367,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav,false_positive,-
+1642723368,Wazuh: ClamAV database update,172.19.130.4,mail,W-Sys-Cav,false_positive,-
+1642723432,Wazuh: ClamAV database update,192.168.231.56,davey_mail,W-Sys-Cav,false_positive,-
+1642724061,Suricata: Alert - ET POLICY GNU/Linux APT User-Agent Outbound likely related to package management,10.143.0.103,internal_share,S-Flw-Apt,false_positive,-
+1642724061,Wazuh: First time this IDS alert is generated.,10.143.0.103,internal_share,W-All-Ids,false_positive,-
 ```
 
 ### Alert aggregation
