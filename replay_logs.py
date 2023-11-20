@@ -5,7 +5,7 @@ from glob import glob
 from datetime import datetime
 import pytz
 
-scenario = 'santos'
+scenario = 'russellmitchell'
 
 if scenario == 'russellmitchell':
     sim_start = datetime.strptime('2022-01-21 00:00:00', '%Y-%m-%d %H:%M:%S') # russellmitchell: 2022-01-24 03:01 - 2022-01-24 04:39
@@ -31,6 +31,30 @@ elif scenario == 'santos':
     sim_end = datetime.strptime('2022-01-18 00:00:00', '%Y-%m-%d %H:%M:%S')
     sim_end = sim_end.replace(tzinfo=pytz.utc)
     logdir = '/home/ubuntu/aitldsv2/santos/gather/'
+elif scenario == 'shaw':
+    sim_start = datetime.strptime('2022-01-25 00:00:00', '%Y-%m-%d %H:%M:%S') # shaw: 2022-01-25 00:00 - 2022-01-31 00:00
+    sim_start = sim_start.replace(tzinfo=pytz.utc)
+    sim_end = datetime.strptime('2022-01-31 00:00:00', '%Y-%m-%d %H:%M:%S')
+    sim_end = sim_end.replace(tzinfo=pytz.utc)
+    logdir = '/home/ubuntu/aitldsv2/shaw/gather/'
+elif scenario == 'wardbeck':
+    sim_start = datetime.strptime('2022-01-19 00:00:00', '%Y-%m-%d %H:%M:%S') # wardbeck: 2022-01-19 00:00 - 2022-01-24 00:00
+    sim_start = sim_start.replace(tzinfo=pytz.utc)
+    sim_end = datetime.strptime('2022-01-24 00:00:00', '%Y-%m-%d %H:%M:%S')
+    sim_end = sim_end.replace(tzinfo=pytz.utc)
+    logdir = '/home/ubuntu/aitldsv2/wardbeck/gather/'
+elif scenario == 'wheeler':
+    sim_start = datetime.strptime('2022-01-26 00:00:00', '%Y-%m-%d %H:%M:%S') # wheeler: 2022-01-26 00:00 - 2022-01-31 00:00
+    sim_start = sim_start.replace(tzinfo=pytz.utc)
+    sim_end = datetime.strptime('2022-01-31 00:00:00', '%Y-%m-%d %H:%M:%S')
+    sim_end = sim_end.replace(tzinfo=pytz.utc)
+    logdir = '/home/ubuntu/aitldsv2/wheeler/gather/'
+elif scenario == 'wilson':
+    sim_start = datetime.strptime('2022-02-03 00:00:00', '%Y-%m-%d %H:%M:%S') # wilson: 2022-02-03 00:00 - 2022-02-09 00:00
+    sim_start = sim_start.replace(tzinfo=pytz.utc)
+    sim_end = datetime.strptime('2022-02-09 00:00:00', '%Y-%m-%d %H:%M:%S')
+    sim_end = sim_end.replace(tzinfo=pytz.utc)
+    logdir = '/home/ubuntu/aitldsv2/wilson/gather/'
 
 output_dir = '/var/log/replay' # Make sure that subdirectories exist
 #files = ['/apache2/' + serverName + '-access.log', '/apache2/' + serverName + '-error.log', '/audit/audit.log', '/exim4/mainlog', '/suricata/eve.json', '/suricata/fast.log', '/auth.log', '/daemon.log', '/syslog']
