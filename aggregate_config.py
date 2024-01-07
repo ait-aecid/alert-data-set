@@ -13,6 +13,8 @@ files = [['../alerts_filtered/fox_aminer.json', '../alerts_filtered/fox_wazuh.js
 
 input_type = None # Supports 'aminer' or 'ossec'. If None, automatically selects correct parser based on input file directory.
 deltas = [2] # Delta time intervals for group formation in seconds.
+group_strategy = 'delta' # Alert group formation strategy, supported strategies are 'delta' (default), 'type' (like delta, but for each group_type separately), and 'bayes' (bayesian binning)
+group_type = ['AnalysisComponent.AnalysisComponentName', 'rule.description'] # Alert attributes used for group formation. Note that for this to have an effect it is necessary that group_strategy is set to 'type'.
 threshold = 0.55 # Minimum group similarity threshold for incremental clustering [0, 1].
 min_alert_match_similarity = 0.5 # Minimum alert similarity threshold for group matching [0,1]. Set to None to use same value as threshold.
 max_val_limit = 5 # Maximum number of values in merge lists before they are replaced by wildcards [0, inf].
