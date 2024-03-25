@@ -8,6 +8,7 @@ from abbrvs import get_short
 from attacktimes import get_phase, get_duration
 import math
 import glob
+import re
 
 def get_ts_label(label):
     # Events in the AIT-LDSv2 sometimes have multiple labels; this function only returns a single label that we consider the most descriptive one
@@ -36,6 +37,31 @@ def get_labels(scenario, aitlds_path, path):
                     if line in final_labels and final_labels[line] != lines_labels[line_count]:
                         print('Duplicated line with labels ' + str(final_labels[line]) + ' and ' + str(lines_labels[line_count]) + ': ' + line)
                     final_labels[line] = lines_labels[line_count]
+            return final_labels
+
+def get_eve_labels(scenario, aitlds_path, path):
+    # Return labels for data exfiltration alerts
+    for glob_path in glob.glob(aitlds_path + '/' + scenario + '/labels' + path):
+        with open(glob_path) as label_file, open(glob_path.replace('/labels/', '/gather/')) as log_file:
+            lines_labels = {}
+            for line in label_file:
+                j = json.loads(line)
+                lines_labels[j['line']] = j['labels']
+            final_labels = {}
+            line_count = 0
+            for line in log_file:
+                line_count += 1
+                search_result = None
+                for regex in [" query[A] (.+?) from ", " forwarded (.+?) to ", " reply (.+?) is "]:
+                    search_result = re.search(regex, line)
+                    if search_result:
+                        break
+                if search_result:
+                    rrname = search_result.group(1)
+                else:
+                    continue
+                if line_count in lines_labels:
+                    final_labels[rrname] = lines_labels[line_count]
             return final_labels
 
 def netflow_label_mapping(label):
@@ -161,6 +187,9 @@ for scenario in scenarios:
         else:
             labels[('/var/log/logstash/intranet-server/system.cpu.log', 'monitoring')] = get_labels(scenario, aitlds_path, '/monitoring/logs/logstash/intranet-server/*-system.cpu.log')
         labels[('/var/log/openvpn.log', 'vpn')] = get_labels(scenario, aitlds_path, '/vpn/logs/openvpn.log')
+        # Due to missing labels in netflow logs, labels for eve.json are derived from DNS logs
+        labels[('/var/log/suricata/eve.json', 'inet-firewall')] = get_eve_labels(scenario, aitlds_path, '/inet-firewall/logs/dnsmasq.log')
+        labels[('/var/log/suricata/eve.json', 'internal_share')] = get_eve_labels(scenario, aitlds_path, '/inet-firewall/logs/dnsmasq.log')
         #for k, v in labels.items():
         #    print(k)
         #    print(str(k) + ': ' + str(len(v)))
@@ -230,24 +259,34 @@ for scenario in scenarios:
                                 event_label = labels[file_name_from_alert][log_line_from_alert]
                                 break
                 elif description.startswith('Suricata: '):
-                    # Check if the netflow attributes correspond to a labeled netflow in the AIT-NDS; if yes, assign the corresponding label
-                    proto = j['data']['proto']
-                    srcip = j['data']['src_ip']
-                    srcport = j['data']['src_port']
-                    destip = j['data']['dest_ip']
-                    destport = j['data']['dest_port']
-                    if (proto, srcip, srcport, destip, destport) in netflows:
-                        alert_time = datetime.strptime(j['data']['timestamp'], "%Y-%m-%dT%H:%M:%S.%f+0000").replace(tzinfo=timezone.utc).timestamp() # "2022-01-24T03:57:01.687867+0000"
-                        for netflow_time, netflow_label in netflows[(proto, srcip, srcport, destip, destport)]:
-                            if abs(alert_time - netflow_time) < 2:
-                                event_label = [netflow_label]
-                                break
-                    if (proto, destip, destport, srcip, srcport) in netflows:
-                        alert_time = datetime.strptime(j['data']['timestamp'], "%Y-%m-%dT%H:%M:%S.%f+0000").replace(tzinfo=timezone.utc).timestamp() # "2022-01-24T03:57:01.687867+0000"
-                        for netflow_time, netflow_label in netflows[(proto, destip, destport, srcip, srcport)]:
-                            if abs(alert_time - netflow_time) < 2:
-                                event_label = [netflow_label]
-                                break
+                    if description == "Suricata: Alert - ET INFO Observed DNS Query to .biz TLD" and (scenario == "harrison" or scenario == "santos"): # DNSteal domain with .biz TLD only in harrison and santos
+                        # Alerts of this type are (incorrectly) not labeled in the netflows; thus, labeling is based on (correctly) labeled dnsmasq logs
+                        if len(j['data']['dns']['query']) > 1:
+                            print('Multiple rrname entries in alert: ' + str(j['data']['dns']['query']))
+                        rrname = j['data']['dns']['query'][0]['rrname']
+                        file_name_from_alert = (j['location'], ips[j['agent']['ip']])
+                        if file_name_from_alert in labels:
+                            if rrname in labels[file_name_from_alert]:
+                                event_label = labels[file_name_from_alert][rrname]
+                    else:
+                        # Check if the netflow attributes correspond to a labeled netflow in the AIT-NDS; if yes, assign the corresponding label
+                        proto = j['data']['proto']
+                        srcip = j['data']['src_ip']
+                        srcport = j['data']['src_port']
+                        destip = j['data']['dest_ip']
+                        destport = j['data']['dest_port']
+                        if (proto, srcip, srcport, destip, destport) in netflows:
+                            alert_time = datetime.strptime(j['data']['timestamp'], "%Y-%m-%dT%H:%M:%S.%f+0000").replace(tzinfo=timezone.utc).timestamp() # "2022-01-24T03:57:01.687867+0000"
+                            for netflow_time, netflow_label in netflows[(proto, srcip, srcport, destip, destport)]:
+                                if abs(alert_time - netflow_time) < 2:
+                                    event_label = [netflow_label]
+                                    break
+                        if (proto, destip, destport, srcip, srcport) in netflows:
+                            alert_time = datetime.strptime(j['data']['timestamp'], "%Y-%m-%dT%H:%M:%S.%f+0000").replace(tzinfo=timezone.utc).timestamp() # "2022-01-24T03:57:01.687867+0000"
+                            for netflow_time, netflow_label in netflows[(proto, destip, destport, srcip, srcport)]:
+                                if abs(alert_time - netflow_time) < 2:
+                                    event_label = [netflow_label]
+                                    break
                 else:
                     print('full_log missing from alert: ' + str(j))
             phase = get_phase(scenario, log_time)
