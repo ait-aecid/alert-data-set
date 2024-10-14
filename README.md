@@ -1,6 +1,7 @@
-# alert-data-set
+# AIT Alert Data Set (AIT-ADS)
 
-This repostiory contains scripts to generate and analyze the [AIT Alert Data Set (AIT-ADS)](https://zenodo.org/record/8263181). The data set contains alerts from the three intrusion detection systems AMiner, Wazuh, and Suricata, applied on the [AIT Log Data Set V2.0 (AIT-LDSv2)](https://zenodo.org/record/5789064). In the following, we will explain how to generate the alert data sets in case that you want to change configurations of detectors. Of course you do not need to generate the data yourself; if you are only interested in analyzing the data and using it for evaluations, download the AIT-ADS from [Zenodo](https://zenodo.org/record/8263181) or proceed to the [Analysis](#analysis) section.
+This repostiory contains scripts to generate and analyze the [AIT Alert Data Set (AIT-ADS)](https://zenodo.org/record/8263181). The data set contains alerts from the three intrusion detection systems AMiner, Wazuh, and Suricata, applied on the [AIT Log Data Set V2.0 (AIT-LDSv2)](https://zenodo.org/record/5789064). In the following, we will explain how to generate the alert data sets in case that you want to change configurations of detectors. Of course you do not need to generate the data yourself; if you are only interested in analyzing the data and using it for evaluations, download the AIT-ADS from [Zenodo](https://zenodo.org/record/8263181) or proceed to the [Analysis](#analysis) section. If you use the AIT-ADS or any of the resources provided in this repository, please cite the following publication:
+* Landauer, M., Skopik, F., Wurzenberger, M. (2024): [Introducing a New Alert Data Set for Multi-Step Attack Analysis.](https://dl.acm.org/doi/abs/10.1145/3675741.3675748) Proceedings of the 17th Cyber Security Experimentation and Test Workshop. \[[PDF](https://dl.acm.org/doi/pdf/10.1145/3675741.3675748)\]
 
 ## Generation
 
@@ -129,5 +130,5 @@ Meta-alerts are stored in data/out/aggregate/meta_alerts.txt
 
 If you use the AIT-ADS, please cite the following publications:
 
-* Landauer, M., Skopik, F., Wurzenberger, M.: Introducing a New Alert Data Set for Multi-Step Attack Analysis. [arXiv:2308.12627](https://arxiv.org/abs/2308.12627) \[[PDF](https://arxiv.org/pdf/2308.12627.pdf)\]
+* Landauer, M., Skopik, F., Wurzenberger, M. (2024): [Introducing a New Alert Data Set for Multi-Step Attack Analysis.](https://dl.acm.org/doi/abs/10.1145/3675741.3675748) Proceedings of the 17th Cyber Security Experimentation and Test Workshop. \[[PDF](https://dl.acm.org/doi/pdf/10.1145/3675741.3675748)\]
 * Landauer M., Skopik F., Frank M., Hotwagner W., Wurzenberger M., Rauber A. (2023): [Maintainable Log Datasets for Evaluation of Intrusion Detection Systems.](https://ieeexplore.ieee.org/abstract/document/9866880) IEEE Transactions on Dependable and Secure Computing, vol. 20, no. 4, pp. 3466-3482. \[[PDF](https://arxiv.org/pdf/2203.08580.pdf)\]
